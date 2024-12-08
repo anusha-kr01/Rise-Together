@@ -1,0 +1,330 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000000;
+    color: white;
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    color: #fff;
+    text-align: center;
+}
+
+p {
+    text-align: center;
+    color: #ddd;
+    font-size: 2rem;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #f51e1e;
+}
+
+
+/* Header Styles */
+header p {
+    margin-top: 5px; /* Reduce the top margin of the paragraph */
+    font-size: 1.7rem;
+}
+
+header {
+    background-color: #000000;
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 4rem;
+    margin: 0;
+}
+
+/* Navigation Section */
+.navigation {
+    background-color: #2e2e2e;
+    padding: 17px 10px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navigation ul {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.navigation li {
+    margin: 0 15px;
+}
+
+.navigation a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.7rem;
+    font-style: italic;
+    font-weight: bold;
+    padding: 5px 10px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.navigation a:hover {
+    color: #a4a3a3;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+}
+
+/* Media Query for Mobile and Tablets */
+@media (max-width: 768px) {
+    
+    /* Header Font Size Adjustment */
+    header h1 {
+        font-size: 2.5rem; /* Adjust header size for smaller screens */
+    }
+
+    /* Navigation Section */
+    .navigation ul {
+        flex-direction: column; /* Stack navigation items vertically */
+        padding: 0;
+    }
+
+    .navigation li {
+        margin: 10px 0; /* Add vertical spacing between navigation items */
+    }
+
+    .navigation a {
+        font-size: 1.5rem; /* Adjust font size for smaller screens */
+        padding: 10px 20px; /* Increase padding for better touch targets */
+    }
+
+    /* Global Font Size Adjustments */
+    p {
+        font-size: 1.5rem; /* Decrease font size of paragraphs for smaller screens */
+    }
+
+    /* Body Padding */
+    body {
+        padding: 10px; /* Add padding for small devices */
+    }
+
+    /* For the links */
+    a {
+        font-size: 1.5rem; /* Adjust font size for smaller screens */
+    }
+
+    /* Adjusting Text Alignment */
+    h1, h2, h3 {
+        font-size: 2rem; /* Adjust heading size */
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Main Section */
+.main-section {
+    padding: 60px 20px;
+    background-color: #0b0b0b;
+    /* text-align: center; */
+}
+
+.main-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.main-section p {
+    font-size: 1.5rem;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+/* Media Query for Mobile and Tablets */
+@media (max-width: 768px) {
+    
+    /* Main Section Padding */
+    .main-section {
+        padding: 40px 10px; /* Reduce padding on smaller screens */
+    }
+
+    /* Main Section Heading */
+    .main-section h2 {
+        font-size: 2rem; /* Reduce font size for headings */
+        margin-bottom: 15px; /* Adjust margin for headings */
+    }
+
+    /* Main Section Paragraph */
+    .main-section p {
+        font-size: 1.2rem; /* Reduce font size for paragraphs */
+        max-width: 100%; /* Allow the text to take up the full width */
+        text-align: center; /* Center align text for smaller screens */
+        margin: 0 10px; /* Add some margin for spacing */
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+/* Seek for Help Section */
+.seek-help-section {
+    display: flex;
+    flex-direction: column; /* Arrange the content vertically (heading on top) */
+    align-items: center; /* Center-align the content */
+    gap: 20px;
+    margin: 40px 0;
+}
+
+#crises-help h1 {
+    text-align: center;
+    margin-bottom: 20px; /* Adjust spacing below the heading */
+    font-size: 2.5rem; /* Optional: Adjust font size */
+    color: white; /* Optional: Adjust color for visibility */
+}
+
+.help-boxes-container {
+    display: flex; /* Keep boxes in a row */
+    justify-content: center; /* Center the boxes horizontally */
+    gap: 30px; /* Add some space between the boxes */
+}
+
+.help-box {
+    background-color: #2d2d2d;
+    border-radius: 10px;
+    width: 30%;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.help-box:hover {
+    transform: scale(1.05);
+}
+
+.help-box img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+}
+
+.help-box h3 {
+    padding: 5px;
+    font-size: 2.5rem;
+    color: #fdfdfd;
+}
+
+/* Media Query for Mobile and Tablets */
+@media (max-width: 768px) {
+    
+    /* Seek Help Section Layout */
+    .seek-help-section {
+        margin: 20px 10px; /* Reduce margin for smaller screens */
+        gap: 15px; /* Reduce gap between elements */
+    }
+
+    /* Heading (h1) Styling */
+    #crises-help h1 {
+        font-size: 2rem; /* Reduce the font size for the heading */
+        margin-bottom: 15px; /* Adjust margin for better spacing */
+    }
+
+    /* Help Boxes Container */
+    .help-boxes-container {
+        flex-direction: column; /* Stack help boxes vertically */
+        align-items: center; /* Center align the help boxes */
+    }
+
+    /* Help Box Styling */
+    .help-box {
+        width: 90%; /* Make each help box take up most of the screen width */
+        margin-bottom: 20px; /* Add space between stacked boxes */
+    }
+
+    /* Help Box Image */
+    .help-box img {
+        height: 200px; /* Reduce image height for mobile */
+    }
+
+    /* Help Box Title (h3) */
+    .help-box h3 {
+        font-size: 1.8rem; /* Reduce font size of the box title */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Footer Section */
+footer {
+    background-color: #111;
+    color: #888;
+    padding: 20px;
+    text-align: center;
+    margin-top: 30px;
+}
+
+footer p {
+    font-size: 1rem;
+}
+
+footer a {
+    color: #f51e1e;
+}
+
+footer a:hover {
+    color: #fff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .seek-help-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .help-box {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+}
