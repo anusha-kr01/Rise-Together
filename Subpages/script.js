@@ -1,7 +1,129 @@
-// Adding functionality for the "Reach Out for Help" button
-document.getElementById('reachOutBtn').addEventListener('click', () => {
-    // Open a new page with helpful suicide prevention resources (this could be a page with more details)
-    window.open('https://www.suicidepreventionlifeline.org/', '_blank');
+document.addEventListener("DOMContentLoaded", function () {
+    // Survival Strategies data for disaster preparedness
+    const survivalStrategiesData = {
+        earthquakes: {
+            title: "Earthquake Survival Strategy",
+            description: `
+                <ol>
+                    <li>Secure heavy items like shelves, mirrors, and electronics.</li>
+                    <li>Identify safe spots under sturdy furniture or against interior walls.</li>
+                    <li>Prepare an emergency kit with essential supplies.</li>
+                    <li>Stay away from windows, glass, and exterior walls during a quake.</li>
+                    <li>Practice "Drop, Cover, and Hold On" drills regularly.</li>
+                </ol>`,
+            image: "images/earthquake.jpg"  // Replace with actual image path
+        },
+        floods: {
+            title: "Flood Survival Strategy",
+            description: `
+                <ol>
+                    <li>Know your area's flood risk and evacuation routes.</li>
+                    <li>Keep important documents in waterproof containers.</li>
+                    <li>Avoid walking or driving through floodwaters.</li>
+                    <li>Elevate electrical appliances and install sump pumps.</li>
+                    <li>Have a communication plan with your family.</li>
+                </ol>`,
+            image: "images/flood.jpg"  // Replace with actual image path
+        },
+        tsunamis: {
+            title: "Tsunami Survival Strategy",
+            description: `
+                <ol>
+                    <li>Know the natural warning signs, such as sudden sea level changes.</li>
+                    <li>Move immediately to higher ground when a warning is issued.</li>
+                    <li>Avoid the beach and coastal areas during a tsunami alert.</li>
+                    <li>Stay informed through radio or local emergency alerts.</li>
+                    <li>Have a family evacuation and communication plan.</li>
+                </ol>`,
+            image: "images/tsunami.jpg"  // Replace with actual image path
+        },
+        wildfires: {
+            title: "Wildfire Survival Strategy",
+            description: `
+                <ol>
+                    <li>Create a defensible space by clearing flammable materials near your home.</li>
+                    <li>Have an emergency evacuation plan and practice it regularly.</li>
+                    <li>Stay tuned to local alerts and evacuate promptly if directed.</li>
+                    <li>Use fire-resistant building materials for your home.</li>
+                    <li>Keep emergency supplies, including N95 masks, ready.</li>
+                </ol>`,
+            image: "images/wildfire.jpg"  // Replace with actual image path
+        },
+        landslides: {
+            title: "Landslide Survival Strategy",
+            description: `
+                <ol>
+                    <li>Monitor signs of land movement, such as cracks in the ground.</li>
+                    <li>Avoid building or living near steep slopes or areas prone to landslides.</li>
+                    <li>Have an evacuation plan and know your area's hazard maps.</li>
+                    <li>Ensure proper drainage to reduce soil saturation near your home.</li>
+                    <li>Stay informed about weather conditions, especially during heavy rains.</li>
+                </ol>`,
+            image: "images/landslide.jpg"  // Replace with actual image path
+        },
+        droughts: {
+            title: "Drought Survival Strategy",
+            description: `
+                <ol>
+                    <li>Conserve water by fixing leaks and using water-saving appliances.</li>
+                    <li>Store emergency water supplies for drinking and sanitation.</li>
+                    <li>Practice xeriscaping (landscaping with drought-tolerant plants).</li>
+                    <li>Be aware of water restrictions in your area.</li>
+                    <li>Plan for reduced agricultural yields if you rely on farming.</li>
+                </ol>`,
+            image: "images/drought.jpg"  // Replace with actual image path
+        }
+    };
+
+    // Generate the survival strategy boxes
+    const survivalStrategyContainer = document.getElementById('survival-strategy-container');
+    Object.keys(survivalStrategiesData).forEach(key => {
+        const strategy = survivalStrategiesData[key];
+        const strategyBox = document.createElement('div');
+        strategyBox.classList.add('strategy-box');
+        strategyBox.innerHTML = `
+            <h3>${strategy.title}</h3>
+            <img src="${strategy.image}" alt="${strategy.title}">
+            <p><a href="#" class="view-strategy" data-type="${key}">View Strategy</a></p>
+        `;
+        survivalStrategyContainer.appendChild(strategyBox);
+    });
+
+    // Show detailed strategy when clicked in the Survival Strategies section
+    document.querySelectorAll('.view-strategy').forEach(link => {
+        link.addEventListener('click', function (event) {
+            event.preventDefault(); // Prevent navigation
+            const type = this.getAttribute('data-type'); // Get disaster type
+            const content = survivalStrategiesData[type]; // Fetch content
+
+            if (content) {
+                const modal = document.createElement('div');
+                modal.classList.add('modal');
+                modal.innerHTML = `
+                    <div class="modal-content">
+                        <h3>${content.title}</h3>
+                        <p>${content.description}</p>
+                        <span class="close">&times;</span>
+                    </div>
+                `;
+                document.body.appendChild(modal);
+
+                modal.style.display = "flex"; // Show modal
+
+                // Close modal when "X" is clicked
+                modal.querySelector('.close').addEventListener('click', function () {
+                    modal.style.display = "none";
+                });
+
+                // Close modal when clicking outside the content
+                window.addEventListener('click', function (event) {
+                    if (event.target === modal) {
+                        modal.style.display = "none";
+                    }
+                });
+            }
+        });
+    });
 });
 
 
@@ -11,171 +133,280 @@ document.getElementById('reachOutBtn').addEventListener('click', () => {
 
 
 
-// help section: 
-// Function to fetch helpline from Google Custom Search API based on the country entered
-async function fetchHelpline(country) {
-    const apiKey = 'AIzaSyBqd2TjONV-fSOqqCBmKUwWFBstw5W1J4Y';  // Replace with your Google API key
-    const cx = '7025364494c2e4285';  // Your Custom Search Engine ID
 
-    // Construct the search query to look for suicide prevention helplines for the entered country
-    const query = `suicide prevention helpline ${country}`;
 
-    // API request URL to fetch search results
-    const url = `https://www.googleapis.com/customsearch/v1?q=${encodeURIComponent(query)}&cx=${cx}&key=${apiKey}`;
+
+
+
+// donation part:
+// Function to fetch crisis data from ReliefWeb and display it in the donation section
+async function fetchDonationCrisisData() {
+    try {
+        const response = await fetch('https://api.reliefweb.int/v1/reports?query[value]=disaster&limit=4');
+        const crisisData = await response.json();
+        const donationContainer = document.getElementById('donation-container');
+        donationContainer.innerHTML = ''; // Clear existing donation boxes
+
+        // Loop through each crisis and create a donation box
+        for (let crisis of crisisData.data) {
+            const donationBox = document.createElement('div');
+            donationBox.classList.add('donation-box');
+
+            // Fetch an image based on the crisis title (or keywords)
+            const imageUrl = await fetchImage(crisis.fields.title.toLowerCase());
+
+            // Donation Box Content
+            const image = document.createElement('img');
+            image.src = imageUrl;
+            image.alt = crisis.fields.title;
+            image.classList.add('donation-image');
+
+            const header = document.createElement('div');
+            header.classList.add('donation-header');
+            header.innerHTML = `<h3>${crisis.fields.title} <span>Donate Now</span></h3>`;
+
+            const content = document.createElement('div');
+            content.classList.add('donation-content');
+
+            const description = document.createElement('p');
+            description.textContent = `Help those affected by this disaster. Your contribution will provide essential relief.`;
+            description.classList.add('donation-description'); // Add a specific class for styling
+
+            // Create the "Donate Now" button with updated functionality
+            const donateButton = document.createElement('button');
+            donateButton.classList.add('donate-btn');
+            donateButton.textContent = 'Donate Now';
+            donateButton.onclick = () => {
+                // Open the Google Custom Search Engine page with the query related to donation
+                const searchQuery = encodeURIComponent(crisis.fields.title + " donate");
+                const searchUrl = `https://cse.google.com/cse?cx=a6329fc247e6a4083&q=${searchQuery}`;
+                window.open(searchUrl, '_blank');  // Opens the search engine in a new tab
+            };
+
+            content.appendChild(description);
+            content.appendChild(donateButton);
+
+            // Append everything to the donationBox
+            donationBox.appendChild(header);
+            donationBox.appendChild(image);
+            donationBox.appendChild(content);
+
+            // Append the donation box to the container
+            donationContainer.appendChild(donationBox);
+        }
+    } catch (error) {
+        console.error('Error fetching donation crisis data:', error);
+    }
+}
+
+// Call the function to fetch crisis data when the page loads
+fetchDonationCrisisData();
+
+
+
+
+
+
+
+
+
+// home part: 
+
+// Function to fetch image from Google Custom Search API based on a query (e.g., crisis title)
+async function fetchImage(query) {
+    const apiKey = 'AIzaSyA0xm6hS-z5Xac571CVdu-Ye6XVnxnrinM';  // Replace with your Google API key
+    const cx = 'a6329fc247e6a4083';  // Your Custom Search Engine ID
+    const url = `https://www.googleapis.com/customsearch/v1?q=${query}&searchType=image&cx=${cx}&key=${apiKey}`;
 
     try {
-        // Fetch the search results from the Google Custom Search API
         const response = await fetch(url);
         const data = await response.json();
 
-        // Check if there are results
+        // Check if images are available in the response
         if (data.items && data.items.length > 0) {
-            // Get the first result link (optional: you can display all results)
-            const firstResult = data.items[0].link;
-
-            // Construct the search URL for your CSE with the same query
-            const cseSearchUrl = `https://www.google.com/cse?cx=${cx}&q=${encodeURIComponent(query)}`;
-
-            // Open your Custom Search Engine with the query pre-filled
-            window.open(cseSearchUrl, "_blank");  // Open the search page in a new tab
+            const imageUrl = data.items[0].link;  // Get the first image URL
+            console.log("Image URL:", imageUrl);  // Log the image URL for debugging
+            return imageUrl;
         } else {
-            // If no results found from the API, alert the user
-            console.error("No results found for the helpline in your country.");
-            alert("No helplines found for the entered country.");
+            console.error("No image found for query:", query);  // Log error if no image is found
+            return 'https://via.placeholder.com/342x242';  // Default placeholder image
         }
     } catch (error) {
-        // Log and alert if there's an error during the API request
-        console.error("Error fetching data from Google Custom Search API:", error);
-        alert("An error occurred while searching. Please try again.");
+        console.error("Error fetching image from Google Custom Search:", error);
+        return 'https://via.placeholder.com/342x242';  // Default placeholder image
     }
 }
 
-// Event listener for the button
-document.getElementById('searchBtn').addEventListener('click', () => {
-    // Ask the user to enter their country name
-    const country = prompt("Enter your country name to find the helpline:");
+// Function to fetch crisis data from ReliefWeb and display it
+async function fetchCrisisData() {
+    try {
+        const response = await fetch('https://api.reliefweb.int/v1/reports?query[value]=disaster&limit=4');
+        const crisisData = await response.json();
+        const crisisBoxesContainer = document.getElementById('crisis-boxes-container');
+        crisisBoxesContainer.innerHTML = '';  // Clear existing boxes
 
-    if (country) {
-        // Call the function to fetch the helpline based on the entered country
-        fetchHelpline(country);
+        for (let crisis of crisisData.data) {
+            const crisisBox = document.createElement('div');
+            crisisBox.classList.add('crisis-box');
+            
+            // Fetch an image based on the crisis title (or keywords) using the updated fetchImage function
+            const imageUrl = await fetchImage(crisis.fields.title.toLowerCase());
+
+            const image = document.createElement('img');
+            image.src = imageUrl;  // Set the image source
+            image.alt = crisis.fields.title;
+            image.classList.add('crisis-image');
+            
+            // Add event listener to check if the image is loaded correctly
+            image.onload = () => {
+                console.log("Image loaded successfully:", imageUrl);
+            };
+            image.onerror = () => {
+                console.error("Failed to load image:", imageUrl);
+                image.src = 'https://via.placeholder.com/342x242';  // Fallback placeholder image
+            };
+            
+            const title = document.createElement('h3');
+            title.classList.add('crisis-title');
+            title.textContent = crisis.fields.title;
+            
+            const date = document.createElement('p');
+            date.classList.add('crisis-date');
+            date.textContent = `Start Date: ${crisis.fields.date || 'N/A'}`;
+            
+            // Remove the Donate button and just keep the Read More button
+            const readMoreButton = document.createElement('button');
+            readMoreButton.classList.add('read-more-button');
+            readMoreButton.textContent = 'Read More';
+            readMoreButton.onclick = () => {
+                // Construct the search query URL using the Programmable Search Engine
+                const query = encodeURIComponent(crisis.fields.title); // Encode the title for the URL
+                const searchEngineUrl = `https://cse.google.com/cse?cx=a6329fc247e6a4083&q=${query}`;
+                
+                // Open the search engine URL in a new tab
+                window.open(searchEngineUrl, '_blank');
+            };
+
+            // Append everything to the crisisBox
+            crisisBox.appendChild(image);
+            crisisBox.appendChild(title);
+            // crisisBox.appendChild(date);
+            crisisBox.appendChild(readMoreButton);  // Only append the Read More button
+            
+            // Append the crisisBox to the container
+            crisisBoxesContainer.appendChild(crisisBox);
+        }
+    } catch (error) {
+        console.error('Error fetching crisis data:', error);
+    }
+}
+
+// Call the function to fetch data when the page loads
+fetchCrisisData();
+
+
+
+
+
+
+// profile login 
+document.addEventListener("DOMContentLoaded", function () {
+    const profileLink = document.querySelector('a[href="#profile-section"]');
+    const loginSection = document.getElementById('login-section');
+    const profileSection = document.getElementById('profile-section');
+    const loginForm = document.getElementById('login-form');
+    const profileDetailsContainer = document.getElementById('profile-details');
+
+    // Check if user data exists in localStorage
+    let user = JSON.parse(localStorage.getItem('user')) || null;
+
+    // Initialize view based on login state
+    if (user) {
+        showProfileSection();
+        populateProfileDetails();
+    } else {
+        showLoginSection();
+    }
+
+    profileLink.addEventListener('click', (event) => {
+        event.preventDefault();
+
+        if (user) {
+            showProfileSection();
+            profileSection.scrollIntoView({ behavior: 'smooth' });
+        } else {
+            showLoginSection();
+            loginSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    });
+
+    // Handle login form submission
+    loginForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        // Simulate saving user data (Replace this with API calls in a real application)
+        const formData = new FormData(loginForm);
+        user = {
+            name: formData.get('name'),
+            email: formData.get('email'),
+            joinedOn: new Date().toLocaleDateString(),
+            posts: 0,
+            donations: 0
+        };
+
+        // Save user data in localStorage
+        localStorage.setItem('user', JSON.stringify(user));
+
+        // Show profile section and populate details
+        showProfileSection();
+        populateProfileDetails();
+        profileSection.scrollIntoView({ behavior: 'smooth' });
+    });
+
+    // Populate profile details dynamically
+    function populateProfileDetails() {
+        if (user) {
+            profileDetailsContainer.innerHTML = `
+                <h2>${user.name}</h2>
+                <p><strong>Joined on:</strong> ${user.joinedOn}</p>
+                <p><strong>Email:</strong> ${user.email}</p>
+                    `;
+        }
+    }
+
+    // Show login section
+    function showLoginSection() {
+        loginSection.style.display = 'block';
+        profileSection.style.display = 'none';
+    }
+
+    // Show profile section
+    function showProfileSection() {
+        loginSection.style.display = 'none';
+        profileSection.style.display = 'block';
     }
 });
-   
 
 
+// const container = document.querySelector('.donation-container');
 
-
-
-
-
-
-
-
-
-// Your YouTube API Key
-// Your YouTube API Key
-const apiKey = 'AIzaSyDQWFJ2oNmmO-9BXhv1wgEFCbJfXEq8ntQ';
-
-// Function to fetch motivational songs from YouTube based on a search query
-async function fetchMotivationalSongs(query) {
-    const youtubeUrl = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(query)}&type=video&videoCategoryId=10&key=${apiKey}`;
-
-    try {
-        const response = await fetch(youtubeUrl);
-        const data = await response.json();
-
-        // Check if data has items
-        if (data.items && data.items.length > 0) {
-            const videos = data.items.map(item => ({
-                title: item.snippet.title,
-                videoId: item.id.videoId,
-                thumbnail: item.snippet.thumbnails.high.url,
-                description: item.snippet.description
-            }));
-
-            // Display the videos
-            displayVideos(videos);
-        } else {
-            console.log('No motivational videos found.');
-            alert("No motivational videos found.");
-        }
-    } catch (error) {
-        console.error('Error fetching data from YouTube:', error);
-        alert("An error occurred while fetching videos.");
-    }
-}
-
-// Function to display the videos on the page
-function displayVideos(videos) {
-    const videosContainer = document.getElementById('videosContainer');
-    videosContainer.innerHTML = '';  // Clear any previous videos
-
-    // Ensure we have 8 videos to display (if fewer, add empty spaces)
-    while (videos.length < 8) {
-        videos.push({
-            title: '',
-            videoId: '',
-            thumbnail: '',
-            description: '',
-            empty: true // Flag to mark empty videos
-        });
-    }
-
-    // Loop through the videos and create HTML elements for each video
-    videos.forEach(video => {
-        const videoElement = document.createElement('div');
-        videoElement.classList.add('video');
-        if (video.empty) {
-            videoElement.classList.add('empty'); // Add 'empty' class for empty spaces
-        }
-
-        // Create thumbnail image
-        if (!video.empty) {
-            const thumbnail = document.createElement('img');
-            thumbnail.src = video.thumbnail;
-            thumbnail.alt = video.title;
-
-            // Create a link to the YouTube video
-            const videoLink = document.createElement('a');
-            videoLink.href = `https://www.youtube.com/watch?v=${video.videoId}`;
-            videoLink.target = '_blank';
-            videoLink.textContent = video.title;
-
-            // Create a description element
-            const description = document.createElement('p');
-            description.textContent = video.description;
-
-            // Append the thumbnail, title, and description to the video element
-            videoElement.appendChild(thumbnail);
-            videoElement.appendChild(videoLink);
-            videoElement.appendChild(description);
-        }
-
-        // Append the video element to the videos container
-        videosContainer.appendChild(videoElement);
-    });
-}
-
-// Function to determine the mood and fetch corresponding videos
-function getVideosByMood() {
-    let query = "";
-
-    // Check which mood the user has selected
-    const selectedMoods = [];
-    if (document.getElementById("happyMood").checked) selectedMoods.push("happy");
-    if (document.getElementById("silenceMood").checked) selectedMoods.push("silence");
-    if (document.getElementById("inspiredMood").checked) selectedMoods.push("inspired");
-    if (document.getElementById("devotionalMood").checked) selectedMoods.push("devotional");
-    if (document.getElementById("peacefulMood").checked) selectedMoods.push("peaceful");
-
-    // Construct query based on selected moods
-    if (selectedMoods.length > 0) {
-        query = selectedMoods.map(mood => `${mood} motivational music`).join(" OR ");
-        fetchMotivationalSongs(query); // Fetch videos based on the constructed query
-    } else {
-        alert("Please select at least one mood.");
-    }
-}
-
-// Optionally, you can trigger default motivational videos
-fetchMotivationalSongs("motivational music");
+// campaigns.forEach((campaign) => {
+//     const campaignHTML = `
+//         <div class="donation-box">
+//             <div class="donation-header">
+//                 <h3>${campaign.location}: Relief Campaign</h3>
+//             </div>
+//             <div class="donation-content">
+//                 <img src="${campaign.image}" alt="Relief Campaign in ${campaign.location}" class="donation-image">
+//                 <div class="donation-details">
+//                     <p class="location"><strong>Location:</strong> ${campaign.location}</p>
+//                     <p>${campaign.description}</p>
+//                     <p><strong>Total Amount Needed:</strong> <span class="highlight">${campaign.needed} ₹</span></p>
+//                     <p><strong>Total Amount Collected:</strong> <span class="highlight">${campaign.collected} ₹</span></p>
+//                     ${campaign.status ? `<p class="status">${campaign.status}</p>` : ''}
+//                 </div>
+//             </div>
+//             <p class="launch-date"><strong>Launched on:</strong> ${campaign.launchDate}</p>
+//         </div>`;
+//     container.innerHTML += campaignHTML;
+// });

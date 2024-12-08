@@ -1,308 +1,198 @@
-/* General Reset */
-* {
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background-color: #f9f9f9;
 }
 
-/* Body Styling */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    color: #333;
-}
-
-/* Header Styling */
 header {
-    background-color: #FF6347; /* Warm tone for encouragement */
-    padding: 20px;
-    color: white;
-}
-
-/* Logo Section */
-header .logo {
+    background-color: #0b0707;
+    color: #fff;
+    padding: 10px 20px;
     text-align: center;
-    margin-bottom: 20px;
-    color: white;
 }
 
-header h1 {
-    margin-bottom: 5px;
-    font-size: 2.5rem;
-    font-family: 'Georgia', serif; /* Adds a touch of elegance */
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
-header p {
-    font-size: 1.2rem;
-    font-style: italic; /* Adds a subtle uplifting feel */
-    margin-top: 5px;
-}
-
-/* Navigation Bar Styling */
 header nav ul {
     list-style: none;
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
+    padding: 0;
 }
 
 header nav ul li {
+    display: inline;
     margin: 0 15px;
 }
 
 header nav ul li a {
+    color: #fff;
     text-decoration: none;
-    color: white;
-    font-size: 1rem;
     font-weight: bold;
-    transition: color 0.3s ease;
 }
 
-header nav ul li a:hover {
-    color: #b9b7b5; /* Soft peach tone for hover effect */
+main {
+    padding: 20px;
 }
-ul {
-    list-style-type: none;
+
+
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
     padding: 0;
-    margin: 0;
-    display: flex; /* Use flexbox to arrange items in a row */
 }
 
-ul li {
-    margin: 0;
-    padding: 10px 20px; /* Add padding to space out the items */
-    position: relative;
-}
-
-ul li a {
-    text-decoration: none;
-    color: #333; /* Default link color */
-    font-size: 1.2rem;
-}
-
-/* Add vertical line between list items */
-ul li:not(:last-child) {
-    border-right: 2px solid #ccc; /* Vertical line */
-}
-
-ul li a:hover {
-    color: #616362; /* Change color when hovering over the link */
-}
-/* Responsive Design for Medium Screens */
-@media (max-width: 1024px) {
-    header h1 {
-        font-size: 2rem; /* Adjust header font size */
-    }
-
-    header p {
-        font-size: 1rem; /* Reduce subheading font size */
-    }
-
-    header nav ul {
-        flex-direction: column; /* Stack navigation links vertically */
-        align-items: center; /* Center-align the links */
-    }
-
-    header nav ul li {
-        margin: 10px 0; /* Add spacing between stacked links */
-    }
-
-    ul li {
-        padding: 8px 15px; /* Adjust padding for smaller screens */
-    }
-
-    ul li a {
-        font-size: 1rem; /* Reduce link font size */
-    }
-}
-
-/* Responsive Design for Small Screens */
-@media (max-width: 768px) {
-    header {
-        padding: 15px; /* Reduce header padding */
-    }
-
-    header h1 {
-        font-size: 1.8rem; /* Further reduce header font size */
-    }
-
-    header p {
-        font-size: 0.9rem; /* Reduce subheading font size */
-    }
-
-    ul {
-        flex-direction: column; /* Stack the list items vertically */
-        align-items: center; /* Center-align the list */
-    }
-
-    ul li {
-        padding: 10px; /* Adjust padding for better spacing */
-    }
-
-    ul li:not(:last-child) {
-        border-right: none; /* Remove vertical lines */
-        border-bottom: 1px solid #ccc; /* Add horizontal separators */
-    }
-
-    ul li a {
-        font-size: 0.9rem; /* Reduce link font size further */
-    }
-}
-
-/* Responsive Design for Very Small Screens */
-@media (max-width: 480px) {
-    header {
-        text-align: center;
-    }
-
-    header h1 {
-        font-size: 1.5rem; /* Reduce font size for extra small screens */
-    }
-
-    header p {
-        font-size: 0.8rem;
-    }
-
-    ul li {
-        padding: 8px; /* Reduce padding for compact design */
-    }
-
-    ul li a {
-        font-size: 0.8rem; /* Further reduce link font size */
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-#hero {
-    /* background: url('images/suicide.jpeg') no-repeat center center/cover; */
-
-    /* background: url('images/suicide.jpeg') no-repeat center center/cover; */
-    color: white;
-    height: 400px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* Home Section */
+#home {
+    padding: 30px;
     text-align: center;
+    background-color: #fff;
+}
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 30px;
+}
+
+/* Crisis Boxes Container */
+.crisis-boxes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
     padding: 20px;
 }
 
-#hero .hero-content {
-    background-color: rgba(0, 0, 0, 0.6);
-    padding: 20px;
-    border-radius: 10px;
-    max-width: 600px;
-    margin: 0 auto;
+.crisis-box {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 250px;
+    min-height: 400px; /* Set minimum height to make space for content and the button */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding: 10px;
+    transition: transform 0.3s ease-in-out;
 }
 
-#hero h2 {
-    font-size: 2.5rem;
+.crisis-box:hover {
+    transform: translateY(-10px);  /* Hover effect to lift the box */
+}
+
+/* Image Styling */
+.crisis-image {
+    width: 100%;
+    height: 150px;  /* Fixed height for consistency */
+    object-fit: cover;  /* Ensures the image covers the area without distortion */
+    border-radius: 8px;
     margin-bottom: 10px;
 }
 
-#hero p {
-    font-size: 1.2rem;
+/* Crisis Title */
+.crisis-title {
+    font-size: 1em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 9px;
 }
 
-#hero button {
-    background-color: #FF6347;
+
+/* Button Styling */
+.read-more-button {
+    background-color: #060606;
     color: white;
-    font-size: 1.2rem;
-    padding: 10px 20px;
     border: none;
-    cursor: pointer;
+    padding: 10px;
     border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px; /* Added more margin to give the button some space */
+    transition: background-color 0.3s;
+    width: 100%; /* Ensure the button takes the full width of the box */
+    box-sizing: border-box; /* Ensure padding is included in width calculation */
 }
 
-#hero button:hover {
-    background-color: #e5533d;
+.read-more-button:hover {
+    background-color: #51585f;
 }
 
-/* Medium Screens */
-@media (max-width: 1024px) {
-    #hero {
-        height: 300px; /* Reduce height */
-        padding: 15px; /* Adjust padding */
+
+/* General Styles */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px; /* Adjust font size for smaller screens */
     }
 
-    #hero .hero-content {
-        max-width: 500px; /* Narrow the content */
+    header {
+        padding: 15px 10px;
+    }
+
+    header nav ul li {
+        display: block;
+        margin: 5px 0;
+    }
+
+    header nav ul li a {
+        font-size: 1rem; /* Adjust font size for nav links */
+    }
+
+    h1 {
+        font-size: 1.5em; /* Decrease font size for heading */
+        margin-bottom: 20px;
+    }
+
+    /* Home Section */
+    #home {
         padding: 15px;
     }
 
-    #hero h2 {
-        font-size: 2rem; /* Adjust heading size */
+    /* Crisis Boxes Container */
+    .crisis-boxes {
+        flex-direction: column; /* Stack the boxes vertically on smaller screens */
+        gap: 20px;
     }
 
-    #hero p {
-        font-size: 1rem; /* Adjust paragraph size */
+    .crisis-box {
+        width: 100%; /* Make boxes full-width */
+        min-height: 350px; /* Adjust the height to make it fit smaller screens */
     }
 
-    #hero button {
-        font-size: 1rem; /* Adjust button size */
-        padding: 8px 16px;
-    }
-}
-
-/* Small Screens */
-@media (max-width: 768px) {
-    #hero {
-        height: 250px; /* Further reduce height */
-        padding: 10px; /* Smaller padding */
+    .crisis-title {
+        font-size: 0.9em; /* Reduce title size */
     }
 
-    #hero .hero-content {
-        max-width: 400px; /* Reduce content width */
-        padding: 10px;
-    }
-
-    #hero h2 {
-        font-size: 1.8rem; /* Smaller heading */
-    }
-
-    #hero p {
-        font-size: 0.9rem; /* Smaller paragraph */
-    }
-
-    #hero button {
-        font-size: 0.9rem; /* Smaller button */
-        padding: 7px 14px;
+    .read-more-button {
+        padding: 12px;
+        font-size: 1em;
+        width: auto; /* Allow the button to resize */
     }
 }
 
-/* Very Small Screens */
+/* Media Query for Extra Small Screens (Mobile Phones) */
 @media (max-width: 480px) {
-    #hero {
-        height: 200px; /* Compact height */
+    body {
+        font-size: 12px; /* Further reduce font size for smaller phones */
     }
 
-    #hero .hero-content {
-        max-width: 300px; /* Further narrow content */
+    h1 {
+        font-size: 1.2em; /* Reduce heading font size even more */
     }
 
-    #hero h2 {
-        font-size: 1.5rem; /* Compact heading */
+    .crisis-box {
+        width: 100%; /* Ensure boxes take up the full width on smaller devices */
+        min-height: 300px; /* Reduce the minimum height for smaller screens */
     }
 
-    #hero p {
-        font-size: 0.8rem; /* Compact paragraph */
+    .crisis-title {
+        font-size: 0.8em; /* Further reduce the size of titles */
     }
 
-    #hero button {
-        font-size: 0.8rem; /* Compact button */
-        padding: 6px 12px;
+    .read-more-button {
+        padding: 10px;
+        font-size: 0.9em;
     }
 }
 
@@ -317,62 +207,506 @@ ul li a:hover {
 
 
 
-/* help */
-/* General Styles */
-* {
-    margin: 0;
-    padding: 0;
+
+
+
+
+
+
+
+
+
+
+
+/* Donation Section */
+#donate {
+    background-color: #0a0a0a;
+    padding: 40px;
+    text-align: center;
+    color: #fff; /* White text for visibility */
+}
+
+/* Section Heading */
+h2 {
+    font-size: 2em;
+    margin-bottom: 30px;
+}
+
+/* Donation Boxes Container */
+.donation-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Donation Box */
+.donation-box {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 250px;
+    min-height: 400px; /* Set minimum height to make space for content and the button */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.donation-box:hover {
+    transform: translateY(-10px);  /* Hover effect to lift the box */
+}
+
+/* Donation Image Styling */
+.donation-image {
+    width: 100%;
+    height: 150px;  /* Fixed height for consistency */
+    object-fit: cover;  /* Ensures the image covers the area without distortion */
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+/* Donation Title */
+.donation-header h3 {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #030303; /* Dark color for better contrast */
+    margin-bottom: 10px;
+}
+
+.donation-header span {
+    font-weight: normal;
+}
+
+/* Donation Location */
+.location {
+    font-weight: bold;
+    color: #333;  /* Dark color for better visibility */
+    margin: 10px 0;
+}
+
+/* Donation Description and Financials */
+.donation-details p {
+    color: #444;  /* Set a darker color for the donation description and financials */
+    font-size: 1em;
+    line-height: 1.5;  /* Add line-height for readability */
+    margin: 8px 0;
+}
+
+/* Added a specific style for the donation description text */
+.donation-description {
+    color: #333;  /* Darker text for better readability */
+    font-size: 1em;
+    line-height: 1.6;
+    margin: 10px 0;
+}
+
+/* Donation Amounts */
+.highlight {
+    color: #386b04;  /* Green color for emphasis */
+    font-weight: bold;
+}
+
+/* Donation Input and Button */
+input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #127809;  /* Green border for consistency */
+    border-radius: 4px;
+    margin-bottom: 10px;
+    color: #333; /* Dark color for text inside the input */
+    background-color: #f9f9f9; /* Light background for input fields */
+}
+
+.donate-btn {
+    background-color: #090a0b;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.3s;
+    width: 100%;
     box-sizing: border-box;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    background-color: #1a1a1a;  /* Dark background */
-    color: #fff;  /* Light text for contrast */
+.donate-btn:hover {
+    background-color: #075906;
 }
 
-header {
-    background-color: #333;  /* Dark grey background */
-    padding: 20px;
+/* Launch Date */
+.launch-date {
     text-align: center;
-    color: silver;  /* Silver color for logo text */
+    font-size: 0.9rem;
+    color: #0b0808;
+    margin: 10px 0;
 }
 
-header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 5px;
+
+/* Media Query for Tablets and Smaller Screens (max-width: 768px) */
+@media (max-width: 768px) {
+    #donate {
+        padding: 30px;
+    }
+
+    h2 {
+        font-size: 1.8em;  /* Slightly smaller heading for tablets */
+        margin-bottom: 20px;
+    }
+
+    .donation-container {
+        flex-direction: column; /* Stack the donation boxes vertically */
+        gap: 20px;
+    }
+
+    .donation-box {
+        width: 90%; /* Make donation boxes take up more space on smaller screens */
+        min-height: 350px; /* Reduce the minimum height */
+    }
+
+    .donation-header h3 {
+        font-size: 1.1em;  /* Adjust font size of titles */
+    }
+
+    .donation-details p, .donation-description {
+        font-size: 0.95em; /* Slightly smaller font for descriptions */
+    }
+
+    .highlight {
+        font-size: 1.1em; /* Slightly smaller font for highlighted amounts */
+    }
+
+    input[type="number"] {
+        padding: 8px; /* Adjust padding for smaller input fields */
+    }
+
+    .donate-btn {
+        padding: 12px;
+        font-size: 1.1em;
+    }
+
+    .launch-date {
+        font-size: 0.8rem;
+    }
 }
 
-header p {
-    font-size: 1.2rem;
-}
-/* General Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* Media Query for Mobile Devices (max-width: 480px) */
+@media (max-width: 480px) {
+    #donate {
+        padding: 20px;
+    }
+
+    h2 {
+        font-size: 1.6em; /* Further reduce heading size for mobile */
+        margin-bottom: 15px;
+    }
+
+    .donation-container {
+        flex-direction: column; /* Ensure donation boxes are stacked vertically */
+        gap: 15px; /* Reduce gap between boxes */
+    }
+
+    .donation-box {
+        width: 100%; /* Make donation boxes full-width */
+        min-height: 300px; /* Further reduce the height */
+    }
+
+    .donation-header h3 {
+        font-size: 1em; /* Reduce font size of titles */
+    }
+
+    .donation-details p, .donation-description {
+        font-size: 0.9em; /* Make descriptions a little smaller for mobile */
+    }
+
+    .highlight {
+        font-size: 1.05em; /* Slightly smaller font for amounts on mobile */
+    }
+
+    input[type="number"] {
+        padding: 8px; /* Adjust padding for smaller mobile devices */
+    }
+
+    .donate-btn {
+        padding: 10px;
+        font-size: 1em;
+    }
+
+    .launch-date {
+        font-size: 0.7rem; /* Make the launch date text smaller */
+    }
 }
 
-body {
-    font-family: Arial, sans-serif;
-    background-color: #1a1a1a;  /* Dark background */
-    color: #fff;  /* Light text for contrast */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Survival Strategies Section */
+#survival-strategy {
+    max-width: 100%; /* Full-width to blend with background */
+    margin: 0; /* Remove extra margins */
+    padding: 50px 20px; /* Add spacing directly to the section */
+    background-color: #ffffff; /* Make background white */
+    border-radius: 0; /* Remove border radius */
+    box-shadow: none; /* Remove shadow effect */
 }
 
-header {
-    background-color: #333;  /* Dark grey background */
-    padding: 20px;
+/* Section Title */
+#survival-strategy h2 {
     text-align: center;
-    color: silver;  /* Silver color for logo text */
-}
-
-header h1 {
     font-size: 2.5rem;
-    margin-bottom: 5px;
+    color: #02080f;
+    margin-bottom: 20px;
 }
 
-header p {
-    font-size: 1.2rem;
+/* Strategy Boxes Layout */
+#survival-strategy-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));  /* Responsive grid */
+    gap: 20px;
+    padding: 10px;
+}
+
+/* Strategy Box Styling */
+.strategy-box {
+    background-color: #080303;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.strategy-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+.strategy-box h3 {
+    font-size: 1.6rem;
+    color: #fcf7f7;
+    margin-bottom: 15px;
+}
+
+.strategy-box img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.strategy-box p {
+    margin-top: 10px;
+}
+
+.strategy-box a {
+    text-decoration: none;
+    color: #f7f7f7;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 15px;
+    border: 2px solid #f8fafb;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.strategy-box a:hover {
+    background-color: #f1f3f5;
+    color: rgb(8, 6, 6);
+}
+
+/* Modal Styling */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(215, 214, 214, 0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    /* para inside one */
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+    opacity: 100% black;
+}
+
+.modal-content h3 {
+    /* entering part heading */
+    font-size: 1.8rem;
+    color: #070505;
+    margin-bottom: 15px;
+    opacity: black;
+}
+
+.modal-content p {
+    color: #fcfbfb;
+    font-size: 1rem;
+    line-height: 1.6;
+    
+}
+
+/* Modal Content Styling for Survival Strategies */
+.modal-content ol {
+    text-align: left; /* Aligns text to the left */
+    padding-left: 20px; /* Adds padding for proper indentation */
+    margin: 10px 0; /* Adds space around the list */
+    list-style-position: inside; /* Ensures list markers align properly */
+}
+
+.modal-content li {
+    margin-bottom: 8px; /* Adds spacing between list items */
+    font-size: 1rem; /* Adjust font size for readability */
+    line-height: 1.5; /* Improves line spacing */
+}
+
+
+.modal .close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 1.5rem;
+    color: #ffffff;
+    cursor: pointer;
+}
+/* Strategy Boxes Layout */
+#survival-strategy-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Ensure 3 boxes per row */
+    gap: 20px; /* Spacing between the boxes */
+    padding: 10px;
+}
+
+
+/* Media Query for Tablets and Smaller Screens (max-width: 768px) */
+@media (max-width: 768px) {
+    #survival-strategy {
+        padding: 40px 15px; /* Reduced padding for smaller screens */
+    }
+
+    #survival-strategy h2 {
+        font-size: 2rem; /* Adjust font size for smaller devices */
+        margin-bottom: 15px; /* Adjust margin */
+    }
+
+    #survival-strategy-container {
+        grid-template-columns: repeat(2, 1fr); /* Two boxes per row for smaller screens */
+        gap: 15px; /* Reduced gap between boxes */
+    }
+
+    .strategy-box {
+        padding: 12px; /* Reduced padding inside strategy box */
+    }
+
+    .strategy-box h3 {
+        font-size: 1.4rem; /* Adjust heading font size */
+    }
+
+    .strategy-box img {
+        height: 180px; /* Adjust image height */
+    }
+
+    .modal-content h3 {
+        font-size: 1.6rem; /* Adjust heading size in modal */
+    }
+
+    .modal-content p {
+        font-size: 0.9rem; /* Slightly smaller font for description inside modal */
+    }
+
+    .modal-content ol {
+        padding-left: 15px; /* Adjust padding for list inside modal */
+    }
+
+    .modal-content li {
+        font-size: 0.95rem; /* Adjust list font size */
+    }
+}
+
+/* Media Query for Mobile Devices (max-width: 480px) */
+@media (max-width: 480px) {
+    #survival-strategy {
+        padding: 30px 10px; /* Reduced padding for mobile */
+    }
+
+    #survival-strategy h2 {
+        font-size: 1.5rem; /* Further reduced font size */
+        margin-bottom: 10px;
+    }
+
+    #survival-strategy-container {
+        grid-template-columns: 1fr; /* One box per row for mobile devices */
+        gap: 10px; /* Further reduced gap between boxes */
+    }
+
+    .strategy-box {
+        padding: 10px; /* Reduced padding */
+    }
+
+    .strategy-box h3 {
+        font-size: 1.2rem; /* Adjusted font size for mobile */
+    }
+
+    .strategy-box img {
+        height: 150px; /* Further reduced image height for mobile */
+    }
+
+    .modal-content h3 {
+        font-size: 1.4rem; /* Smaller heading font size */
+    }
+
+    .modal-content p {
+        font-size: 0.85rem; /* Smaller font for description */
+    }
+
+    .modal-content ol {
+        padding-left: 10px; /* Adjust padding for list */
+    }
+
+    .modal-content li {
+        font-size: 0.9rem; /* Adjusted list font size */
+    }
 }
 
 
@@ -384,7 +718,47 @@ header p {
 
 
 
-/* Help Blocks Layout */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Help Section */
+#help {
+    padding: 50px; /* More padding for a spacious look */
+    background-color: #ffffff; /* Full white background */
+    font-family: Arial, sans-serif;
+    margin: 0 auto; /* Centering the content */
+}
+
+/* Heading Styles */
+#help h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #05080c;
+    margin-bottom: 30px;
+}
+
+/* Help Blocks */
 .help-block {
     margin-bottom: 40px;
 }
@@ -421,15 +795,57 @@ header p {
 .help-block ul li strong {
     color: #090909; /* Green for emphasis */
 }
-/* Media Query for Smaller Screens (Mobile/Tablets) */
+
+
+/* Media Query for Tablets and Smaller Screens (max-width: 768px) */
 @media (max-width: 768px) {
     #help {
-        display: block; /* Stack all help boxes vertically */
+        padding: 40px 20px; /* Reduced padding for smaller screens */
     }
 
-    .help-box {
-        width: 100%; /* Each help box takes the full width */
-        margin: 10px 0; /* Space between stacked boxes */
+    #help h2 {
+        font-size: 2rem; /* Adjusted font size for headings */
+        margin-bottom: 20px; /* Reduced bottom margin */
+    }
+
+    .help-block h3 {
+        font-size: 1.6rem; /* Smaller heading font size */
+        margin-bottom: 12px; /* Adjusted margin */
+    }
+
+    .help-block ul li {
+        font-size: 1rem; /* Smaller font for list items */
+        margin-bottom: 10px; /* Reduced margin */
+    }
+
+    .help-block a {
+        font-size: 1.1rem; /* Slightly smaller font for links */
+    }
+}
+
+/* Media Query for Mobile Devices (max-width: 480px) */
+@media (max-width: 480px) {
+    #help {
+        padding: 30px 15px; /* Reduced padding for mobile */
+    }
+
+    #help h2 {
+        font-size: 1.5rem; /* Further reduced font size */
+        margin-bottom: 15px; /* Reduced margin */
+    }
+
+    .help-block h3 {
+        font-size: 1.4rem; /* Further reduced heading size */
+        margin-bottom: 10px; /* Reduced margin */
+    }
+
+    .help-block ul li {
+        font-size: 0.9rem; /* Smaller font size for list items */
+        margin-bottom: 8px; /* Reduced space between list items */
+    }
+
+    .help-block a {
+        font-size: 1rem; /* Smaller font size for links */
     }
 }
 
@@ -447,342 +863,153 @@ header p {
 
 
 
-/* Home Section with Full-Screen Background */
-#hero {
-    background-image: url('suicide.jpeg'); /* Replace with your image URL */
-    background-size: cover;
-    background-position: center;
-    color: white;
-    height: 100vh; /* Full viewport height */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 20px;
+
+
+
+
+
+
+
+
+
+
+
+
+/* Black background styling for the login section */
+#login-section {
+    display: block; /* Ensure it remains displayed */
+    background-color: #000; /* Black background */
+    color: #fff; /* White text for contrast */
+    padding: 50px; /* Add padding for spacing */
+    border-radius: 10px; /* Rounded corners for a sleek look */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7); /* Shadow for depth */
+    max-width: 600px; /* Restrict width for a centered appearance */
+    margin: 50px auto; /* Center the section horizontally */
 }
 
-#hero h2 {
-    font-size: 3rem;
+/* Login section heading */
+#login-section h2 {
+    font-size: 2rem;
     margin-bottom: 20px;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Add shadow for better contrast */
+    color: #fff; /* White heading text */
+    text-align: center; /* Center-align heading */
 }
 
-#hero button {
-    background-color: #FF0000; /* Bright red button */
-    color: white;
-    font-size: 1.5rem;
-    padding: 15px 30px;
-    border: none;
-    cursor: pointer;
+/* Login form styling */
+#login-form {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    gap: 15px; /* Add space between form elements */
+}
+
+/* Input fields */
+#login-form input {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #444; /* Subtle border for inputs */
     border-radius: 5px;
-    text-shadow: none; /* No text shadow on the button */
+    background-color: rgba(255, 255, 255, 0.1); /* Transparent input background */
+    color: #fff; /* White text inside inputs */
 }
 
-#hero button:hover {
-    background-color: #cc0000;
+/* Placeholder text color */
+#login-form input::placeholder {
+    color: #f9f7f7; /* Light gray for placeholders */
 }
 
-/* Media Query for Smaller Screens (Mobile/Tablets) */
-@media (max-width: 768px) {
-    .help-box {
-        width: 100%; /* Each box takes the full width of its container */
-        margin-bottom: 20px; /* Space between each box */
-    }
-
-    /* Optionally, if the boxes are in a flex or grid container, adjust the layout */
-    #help {
-        display: block; /* Stack them vertically */
-    }
+/* Focus styling for inputs */
+#login-form input:focus {
+    outline: none;
+    border-color: #0b0707; /* White border on focus */
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-#help {
-    padding: 40px 20px;
-    background-color: #080808;
-    color: white;
-    text-align: center;
-}
-
-#help h1 {
-    font-size: 2.5rem;
-    margin-bottom: 30px;
-    color: #f1f1f1;
-}
-
-.help-box {
-    background-color: #1a1a1a;
-    border-radius: 10px;
-    padding: 20px;
-    margin: 20px;
-    display: inline-block;
-    width: 18%; /* Set width for a box layout */
-    vertical-align: top;
-    text-align: left;
-    color: #ddd;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-}
-
-.help-box:hover {
-    transform: scale(1.05);
-}
-
-.help-box h2 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-    color: #e93232;
-}
-
-.help-box p {
+/* Login button */
+#login-form button {
+    padding: 10px;
     font-size: 1rem;
-    line-height: 1.6;
-}
-
-.search-help {
-    margin-top: 40px;
-    text-align: center;
-}
-
-.search-help p {
-    font-size: 1.2rem;
-    margin-bottom: 15px;
-    color: #f1f1f1;
-}
-
-#searchBtn {
-    padding: 10px 20px;
-    font-size: 1rem;
-    background-color: #f51e1e;
-    color: white;
+    background-color: #333; /* Dark button background */
+    color: #f4f0f0; /* White text */
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s ease;
 }
 
-#searchBtn:hover {
-    background-color: #626664;
+/* Hover effect for login button */
+#login-form button:hover {
+    background-color: #555; /* Lighter gray on hover */
 }
 
-/* Media Query for Smaller Screens (Mobile/Tablets) */
-@media (max-width: 768px) {
-    /* Stack each box vertically, each taking full width */
-    .help-box {
-        width: 100%; /* Each box will take the full width */
-        display: block; /* Ensures they are stacked vertically */
-        margin-bottom: 20px; /* Adds spacing between the boxes */
-    }
+/* Center-align form elements and adjust layout */
+#login-form label {
+    color: #0a0707; /* Ensure labels are white */
+    font-size: 1rem;
+}
 
-    /* Optional: Adjust the text alignment or padding if needed */
-    #help {
-        padding: 20px; /* Adjust padding as needed for smaller screens */
-    }
+/* Optional: Style the body to ensure the login section stands out */
+body {
+    background-color: #0b0b0b; /* Light gray for overall background */
+    margin: 0;
+    font-family: Arial, sans-serif;
+    text-emphasis-color: white;
 }
 
 
 
 
-
-
-
-
-
-
+/* Footer */
 footer {
-    background-color: #333;  /* Dark grey background */
-    color: white;
+    background-color: #0b0808;
+    color: #ffffff;
     text-align: center;
     padding: 10px;
-    margin-top: 40px;
 }
 
 footer p {
-    font-size: 1rem;
+    margin: 0;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#videos {
-    padding: 40px 20px;
-    background-color: #080808;
-    color: white;
+/* Profile Section */
+#profile {
+    background-color: #0a0808;
+    border-radius: 8px;
+    padding: 20px;
     text-align: center;
+    max-width: 400px;
+    margin: 20px auto;
 }
 
-#videos h1 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: #f1f1f1;
-}
-
-#videos iframe {
-    margin: 20px;
-    border-radius: 10px;
-}
-
-#videos #moodSelection {
-    margin-bottom: 30px;
-}
-
-#videos #moodSelection h2 {
-    font-size: 1.5rem;
-    margin-bottom: 15px;
-}
-
-#videos #moodSelection label {
-    font-size: 1.2rem;
-    margin-right: 20px;
-}
-
-#videos #moodSelection button {
+#profile button {
+    background-color: #070807;
+    color: rgb(12, 4, 4);
     padding: 10px 20px;
-    font-size: 1.2rem;
-    background-color: #f32222;
-    color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
 }
 
-#videos #moodSelection button:hover {
-    background-color: #797d7b;
+#profile button:hover {
+    background-color: #0c100d;
 }
 
-#videos #videosContainer {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr); /* Ensures 4 columns per row */
-    gap: 20px; /* Space between videos */
-    justify-content: center;
-    margin-top: 20px;
+/* Tips Section */
+#tips ul {
+    list-style: none;
+    padding: 0;
 }
 
-#videos #videosContainer .video {
-    background-color: #222;
-    padding: 10px;
-    border-radius: 8px;
-    text-align: center;
+#tips ul li {
+    margin: 5px 0;
 }
 
-#videos #videosContainer .video img {
-    max-width: 100%;
-    border-radius: 8px;
-}
-
-#videos #videosContainer .video a {
-    font-size: 1.2rem;
+#tips a {
+    text-decoration: none;
+    color: #110909;
     font-weight: bold;
-    color: #ecf0f1;
-    display: block;
-    margin-top: 10px;
-    text-decoration: none;
 }
 
-#videos #videosContainer .video a:hover {
-    color: #d44040;
-}
-
-#videos #videosContainer .video p {
-    color: #bdc3c7;
-    font-size: 1rem;
-    margin-top: 10px;
-}
-
-/* Adding an invisible filler for empty spots when there are fewer than 8 videos */
-#videos #videosContainer .video.empty {
-    visibility: hidden; /* Make empty elements invisible */
-}
-
-
-/* Media Query for Tablets and Smaller Screens (max-width: 768px) */
-@media (max-width: 768px) {
-    #videos h1 {
-        font-size: 2rem; /* Smaller heading */
-    }
-
-    #videos h2 {
-        font-size: 1.5rem; /* Slightly smaller subheading */
-    }
-
-    #moodSelection {
-        justify-content: flex-start; /* Align checkboxes to the left */
-    }
-    #moodSelection label {
-        font-size: 1rem;
-        margin-right: 20px;
-    }
-
-    #moodSelection button {
-        font-size: 1rem;
-        padding: 8px 16px;
-    }
-
-    #videosContainer {
-        flex-direction: column; /* Stack videos vertically */
-        gap: 15px;
-    }
-}
-/* Media Query for Mobile Devices (max-width: 480px) */
-@media (max-width: 480px) {
-    #videos {
-        padding: 20px;
-    }
-
-    #videos h1 {
-        font-size: 1.6rem; /* Even smaller heading */
-    }
-
-    #videos h2 {
-        font-size: 1.2rem; /* Smaller subheading */
-    }
-    #moodSelection {
-        flex-direction: column; /* Stack the checkbox labels vertically */
-        gap: 10px;
-        justify-content: center;
-    }
-
-    #moodSelection label {
-        font-size: 0.9rem;
-    }
-
-    #moodSelection button {
-        font-size: 1rem;
-        padding: 8px 16px;
-    }
-
-    #videosContainer {
-        flex-direction: column; /* Stack videos vertically */
-        gap: 15px;
-    }
+#tips a:hover {
+    color: #040b04;
 }
 
 
@@ -791,167 +1018,90 @@ footer p {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#doctors {
-    padding: 40px 20px;
-    background-color: #0c0c0c;
-    color: white;
-    display: grid;
-    grid-template-columns: repeat(5, 1fr); /* 5 columns per row */
-    gap: 20px; /* Space between boxes */
-    text-align: center; /* Ensures text in the section is centered */
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f9f9f9;
 }
 
-#doctors h1 {
-    font-size: 3rem;
-    margin-bottom: 40px;
-    color: #f1f1f1;
-    text-align: center; /* Center the heading */
-    grid-column: span 5; /* Makes the heading span all columns */
+/* Home Section (White Background) */
+#home {
+    background-color: #fff; /* White background */
 }
 
-/* For the boxes */
-.doctor-box {
-    background-color: #040404;
-    border-radius: 10px;
-    padding: 20px;
-    margin: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    transition: transform 0.3s ease;
+/* Donate Section (Black Background) */
+#donate {
+    background-color: #000; /* Black background */
 }
 
-.doctor-box:hover {
-    transform: scale(1.05);
+/* Survival Strategy Section (White Background) */
+#survival-strategy {
+    background-color: #fff; /* White background */
 }
 
-.doctor-image {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    margin-bottom: 15px;
-}
-
-.doctor-box h2 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-    color: #ecf0f1;
-}
-
-.doctor-box p {
-    font-size: 1rem;
-    margin-bottom: 15px;
-    color: #bdc3c7;
-}
-
-.view-button {
-    display: inline-block;
-    padding: 10px 20px;
-    font-size: 1.2rem;
-    background-color: #e72121;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: background-color 0.3s;
-}
-
-.view-button:hover {
-    background-color: #646665;
-}
-
-/* Ensures 5 boxes per row */
-#doctors {
-    grid-template-columns: repeat(5, 1fr); /* 5 boxes in one row */
+#login-section {
+    background-color: #000; /* Black background */
 }
 
 /* Media Query for Tablets and Smaller Screens (max-width: 768px) */
 @media (max-width: 768px) {
-    #doctors {
-        padding: 30px 15px;
-        grid-template-columns: repeat(1, 1fr); /* 1 column per row on tablets */
-        gap: 20px; /* Space between boxes */
+    #login-section {
+        padding: 30px; /* Reduced padding for smaller screens */
+        max-width: 100%; /* Allow the login section to take full width on smaller devices */
+        margin: 20px; /* Reduced margin for better fit */
     }
 
-    #doctors h1 {
-        font-size: 2rem; /* Slightly smaller heading */
-        margin-bottom: 30px;
+    #login-section h2 {
+        font-size: 1.6rem; /* Smaller font size for the heading */
+        margin-bottom: 15px; /* Reduced space below the heading */
     }
 
-    .doctor-box {
-        padding: 20px;
-        margin: 10px 0; /* Vertical margin between boxes */
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+    #login-form {
+        gap: 10px; /* Reduced gap between form elements */
     }
 
-    .doctor-box h2 {
-        font-size: 1.5rem; /* Heading size remains the same */
-        margin-bottom: 10px;
+    #login-form input {
+        padding: 8px; /* Reduced padding inside inputs */
+        font-size: 0.9rem; /* Smaller font size for inputs */
     }
 
-    .doctor-box p {
-        font-size: 1rem; /* Text size remains the same */
-        margin-bottom: 15px;
-    }
-
-    .view-button {
-        padding: 10px 20px;
-        font-size: 1.2rem; /* Button size stays the same */
+    #login-form button {
+        padding: 8px; /* Reduced button padding */
+        font-size: 0.9rem; /* Smaller button font size */
     }
 }
 
 /* Media Query for Mobile Devices (max-width: 480px) */
 @media (max-width: 480px) {
-    #doctors {
-        padding: 20px 10px;
-        grid-template-columns: repeat(1, 1fr); /* 1 column per row on mobile */
-        gap: 15px; /* Reduced gap between boxes */
+    #login-section {
+        padding: 20px; /* Further reduced padding for mobile */
+        max-width: 100%; /* Full width on small devices */
+        margin: 10px; /* Very small margin */
     }
 
-    #doctors h1 {
-        font-size: 1.6rem; /* Further reduce heading size */
-        margin-bottom: 20px;
+    #login-section h2 {
+        font-size: 1.4rem; /* Further reduced font size for the heading */
+        margin-bottom: 10px; /* Reduced space below the heading */
     }
 
-    .doctor-box {
-        padding: 15px;
-        margin: 10px 0; /* Vertical margin between boxes */
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+    #login-form {
+        gap: 8px; /* Reduced gap for more compact form */
     }
 
-    .doctor-box h2 {
-        font-size: 1.4rem; /* Slightly smaller heading */
-        margin-bottom: 8px;
+    #login-form input {
+        padding: 6px; /* Reduced input padding */
+        font-size: 0.9rem; /* Smaller font size for inputs */
     }
 
-    .doctor-box p {
-        font-size: 0.95rem; /* Smaller text for descriptions */
-        margin-bottom: 12px;
+    #login-form button {
+        padding: 8px; /* Smaller button padding */
+        font-size: 0.9rem; /* Smaller button font size */
     }
 
-    .view-button {
-        padding: 8px 16px;
-        font-size: 1rem; /* Reduce font size of button */
+    #login-form label {
+        font-size: 0.9rem; /* Smaller font size for labels */
     }
 }
