@@ -1,852 +1,308 @@
-/* General Styles */
-body {
-    font-family: Arial, sans-serif;
+/* Global Styles */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: #f9f9f9;
-}
-
-header {
-    background-color: #0b0707;
-    color: #fff;
-    padding: 10px 20px;
-    text-align: center;
-}
-
-header nav ul {
-    list-style: none;
-    padding: 0;
-}
-
-header nav ul li {
-    display: inline;
-    margin: 0 15px;
-}
-
-header nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-main {
-    padding: 20px;
-}
-
-
-/* General Styling */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
-}
-
-/* Home Section */
-#home {
-    padding: 30px;
-    text-align: center;
-    background-color: #fff;
-}
-
-h1 {
-    font-size: 2em;
-    margin-bottom: 30px;
-}
-
-/* Crisis Boxes Container */
-.crisis-boxes {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 50px;
-    padding: 20px;
-}
-
-.crisis-box {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    width: 250px;
-    min-height: 400px; /* Set minimum height to make space for content and the button */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-    padding: 10px;
-    transition: transform 0.3s ease-in-out;
-}
-
-.crisis-box:hover {
-    transform: translateY(-10px);  /* Hover effect to lift the box */
-}
-
-/* Image Styling */
-.crisis-image {
-    width: 100%;
-    height: 150px;  /* Fixed height for consistency */
-    object-fit: cover;  /* Ensures the image covers the area without distortion */
-    border-radius: 8px;
-    margin-bottom: 10px;
-}
-
-/* Crisis Title */
-.crisis-title {
-    font-size: 1em;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 9px;
-}
-
-
-/* Button Styling */
-.read-more-button {
-    background-color: #060606;
-    color: white;
-    border: none;
-    padding: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 15px; /* Added more margin to give the button some space */
-    transition: background-color 0.3s;
-    width: 100%; /* Ensure the button takes the full width of the box */
-    box-sizing: border-box; /* Ensure padding is included in width calculation */
-}
-
-.read-more-button:hover {
-    background-color: #51585f;
-}
-
-
-/* General Styles */
-@media (max-width: 768px) {
-    body {
-        font-size: 14px; /* Adjust font size for smaller screens */
-    }
-
-    header {
-        padding: 15px 10px;
-    }
-
-    header nav ul li {
-        display: block;
-        margin: 5px 0;
-    }
-
-    header nav ul li a {
-        font-size: 1rem; /* Adjust font size for nav links */
-    }
-
-    h1 {
-        font-size: 1.5em; /* Decrease font size for heading */
-        margin-bottom: 20px;
-    }
-
-    /* Home Section */
-    #home {
-        padding: 15px;
-    }
-
-    /* Crisis Boxes Container */
-    .crisis-boxes {
-        flex-direction: column; /* Stack the boxes vertically on smaller screens */
-        gap: 20px;
-    }
-
-    .crisis-box {
-        width: 100%; /* Make boxes full-width */
-        min-height: 350px; /* Adjust the height to make it fit smaller screens */
-    }
-
-    .crisis-title {
-        font-size: 0.9em; /* Reduce title size */
-    }
-
-    .read-more-button {
-        padding: 12px;
-        font-size: 1em;
-        width: auto; /* Allow the button to resize */
-    }
-}
-
-/* Media Query for Extra Small Screens (Mobile Phones) */
-@media (max-width: 480px) {
-    body {
-        font-size: 12px; /* Further reduce font size for smaller phones */
-    }
-
-    h1 {
-        font-size: 1.2em; /* Reduce heading font size even more */
-    }
-
-    .crisis-box {
-        width: 100%; /* Ensure boxes take up the full width on smaller devices */
-        min-height: 300px; /* Reduce the minimum height for smaller screens */
-    }
-
-    .crisis-title {
-        font-size: 0.8em; /* Further reduce the size of titles */
-    }
-
-    .read-more-button {
-        padding: 10px;
-        font-size: 0.9em;
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Donation Section */
-#donate {
-    background-color: #0a0a0a;
-    padding: 40px;
-    text-align: center;
-    color: #fff; /* White text for visibility */
-}
-
-/* Section Heading */
-h2 {
-    font-size: 2em;
-    margin-bottom: 30px;
-}
-
-/* Donation Boxes Container */
-.donation-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    padding: 20px;
-}
-
-/* Donation Box */
-.donation-box {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    width: 250px;
-    min-height: 400px; /* Set minimum height to make space for content and the button */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-    padding: 10px;
-    transition: transform 0.3s ease-in-out;
-}
-
-.donation-box:hover {
-    transform: translateY(-10px);  /* Hover effect to lift the box */
-}
-
-/* Donation Image Styling */
-.donation-image {
-    width: 100%;
-    height: 150px;  /* Fixed height for consistency */
-    object-fit: cover;  /* Ensures the image covers the area without distortion */
-    border-radius: 8px;
-    margin-bottom: 10px;
-}
-
-/* Donation Title */
-.donation-header h3 {
-    font-size: 1.2em;
-    font-weight: bold;
-    color: #030303; /* Dark color for better contrast */
-    margin-bottom: 10px;
-}
-
-.donation-header span {
-    font-weight: normal;
-}
-
-/* Donation Location */
-.location {
-    font-weight: bold;
-    color: #333;  /* Dark color for better visibility */
-    margin: 10px 0;
-}
-
-/* Donation Description and Financials */
-.donation-details p {
-    color: #444;  /* Set a darker color for the donation description and financials */
-    font-size: 1em;
-    line-height: 1.5;  /* Add line-height for readability */
-    margin: 8px 0;
-}
-
-/* Added a specific style for the donation description text */
-.donation-description {
-    color: #333;  /* Darker text for better readability */
-    font-size: 1em;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #111;
+    color: #ddd;
     line-height: 1.6;
-    margin: 10px 0;
-}
-
-/* Donation Amounts */
-.highlight {
-    color: #386b04;  /* Green color for emphasis */
-    font-weight: bold;
-}
-
-/* Donation Input and Button */
-input[type="number"] {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #127809;  /* Green border for consistency */
-    border-radius: 4px;
-    margin-bottom: 10px;
-    color: #333; /* Dark color for text inside the input */
-    background-color: #f9f9f9; /* Light background for input fields */
-}
-
-.donate-btn {
-    background-color: #090a0b;
-    color: white;
-    border: none;
-    padding: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 15px;
-    transition: background-color 0.3s;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-.donate-btn:hover {
-    background-color: #075906;
-}
-
-/* Launch Date */
-.launch-date {
+  }
+  
+  /* Header */
+  header {
+    background-color: #222;
+    color: #fff;
+    padding: 1rem;
     text-align: center;
-    font-size: 0.9rem;
-    color: #0b0808;
-    margin: 10px 0;
-}
-
-
-/* Media Query for Tablets and Smaller Screens (max-width: 768px) */
-@media (max-width: 768px) {
-    #donate {
-        padding: 30px;
-    }
-
-    h2 {
-        font-size: 1.8em;  /* Slightly smaller heading for tablets */
-        margin-bottom: 20px;
-    }
-
-    .donation-container {
-        flex-direction: column; /* Stack the donation boxes vertically */
-        gap: 20px;
-    }
-
-    .donation-box {
-        width: 90%; /* Make donation boxes take up more space on smaller screens */
-        min-height: 350px; /* Reduce the minimum height */
-    }
-
-    .donation-header h3 {
-        font-size: 1.1em;  /* Adjust font size of titles */
-    }
-
-    .donation-details p, .donation-description {
-        font-size: 0.95em; /* Slightly smaller font for descriptions */
-    }
-
-    .highlight {
-        font-size: 1.1em; /* Slightly smaller font for highlighted amounts */
-    }
-
-    input[type="number"] {
-        padding: 8px; /* Adjust padding for smaller input fields */
-    }
-
-    .donate-btn {
-        padding: 12px;
-        font-size: 1.1em;
-    }
-
-    .launch-date {
-        font-size: 0.8rem;
-    }
-}
-
-/* Media Query for Mobile Devices (max-width: 480px) */
-@media (max-width: 480px) {
-    #donate {
-        padding: 20px;
-    }
-
-    h2 {
-        font-size: 1.6em; /* Further reduce heading size for mobile */
-        margin-bottom: 15px;
-    }
-
-    .donation-container {
-        flex-direction: column; /* Ensure donation boxes are stacked vertically */
-        gap: 15px; /* Reduce gap between boxes */
-    }
-
-    .donation-box {
-        width: 100%; /* Make donation boxes full-width */
-        min-height: 300px; /* Further reduce the height */
-    }
-
-    .donation-header h3 {
-        font-size: 1em; /* Reduce font size of titles */
-    }
-
-    .donation-details p, .donation-description {
-        font-size: 0.9em; /* Make descriptions a little smaller for mobile */
-    }
-
-    .highlight {
-        font-size: 1.05em; /* Slightly smaller font for amounts on mobile */
-    }
-
-    input[type="number"] {
-        padding: 8px; /* Adjust padding for smaller mobile devices */
-    }
-
-    .donate-btn {
-        padding: 10px;
-        font-size: 1em;
-    }
-
-    .launch-date {
-        font-size: 0.7rem; /* Make the launch date text smaller */
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Survival Strategies Section */
-#survival-strategy {
-    max-width: 100%; /* Full-width to blend with background */
-    margin: 0; /* Remove extra margins */
-    padding: 50px 20px; /* Add spacing directly to the section */
-    background-color: #ffffff; /* Make background white */
-    border-radius: 0; /* Remove border radius */
-    box-shadow: none; /* Remove shadow effect */
-}
-
-/* Section Title */
-#survival-strategy h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    color: #02080f;
-    margin-bottom: 20px;
-}
-
-/* Strategy Boxes Layout */
-#survival-strategy-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));  /* Responsive grid */
-    gap: 20px;
-    padding: 10px;
-}
-
-/* Strategy Box Styling */
-.strategy-box {
-    background-color: #080303;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 15px;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.strategy-box:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
-}
-
-.strategy-box h3 {
-    font-size: 1.6rem;
-    color: #fcf7f7;
-    margin-bottom: 15px;
-}
-
-.strategy-box img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 8px;
-}
-
-.strategy-box p {
-    margin-top: 10px;
-}
-
-.strategy-box a {
-    text-decoration: none;
-    color: #f7f7f7;
-    font-weight: bold;
-    display: inline-block;
-    margin-top: 10px;
-    padding: 8px 15px;
-    border: 2px solid #f8fafb;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-}
-
-.strategy-box a:hover {
-    background-color: #f1f3f5;
-    color: rgb(8, 6, 6);
-}
-
-/* Modal Styling */
-.modal {
-    display: none;
-    position: fixed;
+    position: sticky;
     top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(215, 214, 214, 0.6);
+    z-index: 100;
+  }
+  
+  header h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  nav {
+    margin-top: 1rem;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  nav ul li a {
+    color: #ddd;
+    text-decoration: none;
+    font-size: 1rem;
+    text-transform: uppercase;
+    padding: 0.5rem 1rem;
+    border: 1px solid #444;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  nav ul li a:hover {
+    background-color: #444;
+    color: #fff;
+  }
+  
+  /* Hero Section */
+  .hero {
+    background: linear-gradient(to bottom, #222, #444);
+    color: #fff;
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    z-index: 1000;
-}
-
-.modal-content {
-    /* para inside one */
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 8px;
-    max-width: 500px;
-    width: 90%;
     text-align: center;
-    opacity: 100% black;
-}
-
-.modal-content h3 {
-    /* entering part heading */
-    font-size: 1.8rem;
-    color: #070505;
-    margin-bottom: 15px;
-    opacity: black;
-}
-
-.modal-content p {
-    color: #fcfbfb;
-    font-size: 1rem;
-    line-height: 1.6;
-    
-}
-
-/* Modal Content Styling for Survival Strategies */
-.modal-content ol {
-    text-align: left; /* Aligns text to the left */
-    padding-left: 20px; /* Adds padding for proper indentation */
-    margin: 10px 0; /* Adds space around the list */
-    list-style-position: inside; /* Ensures list markers align properly */
-}
-
-.modal-content li {
-    margin-bottom: 8px; /* Adds spacing between list items */
-    font-size: 1rem; /* Adjust font size for readability */
-    line-height: 1.5; /* Improves line spacing */
-}
-
-
-.modal .close {
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    font-size: 1.5rem;
-    color: #ffffff;
-    cursor: pointer;
-}
-/* Strategy Boxes Layout */
-#survival-strategy-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Ensure 3 boxes per row */
-    gap: 20px; /* Spacing between the boxes */
-    padding: 10px;
-}
-
-
-/* Media Query for Tablets and Smaller Screens (max-width: 768px) */
-@media (max-width: 768px) {
-    #survival-strategy {
-        padding: 40px 15px; /* Reduced padding for smaller screens */
-    }
-
-    #survival-strategy h2 {
-        font-size: 2rem; /* Adjust font size for smaller devices */
-        margin-bottom: 15px; /* Adjust margin */
-    }
-
-    #survival-strategy-container {
-        grid-template-columns: repeat(2, 1fr); /* Two boxes per row for smaller screens */
-        gap: 15px; /* Reduced gap between boxes */
-    }
-
-    .strategy-box {
-        padding: 12px; /* Reduced padding inside strategy box */
-    }
-
-    .strategy-box h3 {
-        font-size: 1.4rem; /* Adjust heading font size */
-    }
-
-    .strategy-box img {
-        height: 180px; /* Adjust image height */
-    }
-
-    .modal-content h3 {
-        font-size: 1.6rem; /* Adjust heading size in modal */
-    }
-
-    .modal-content p {
-        font-size: 0.9rem; /* Slightly smaller font for description inside modal */
-    }
-
-    .modal-content ol {
-        padding-left: 15px; /* Adjust padding for list inside modal */
-    }
-
-    .modal-content li {
-        font-size: 0.95rem; /* Adjust list font size */
-    }
-}
-
-/* Media Query for Mobile Devices (max-width: 480px) */
-@media (max-width: 480px) {
-    #survival-strategy {
-        padding: 30px 10px; /* Reduced padding for mobile */
-    }
-
-    #survival-strategy h2 {
-        font-size: 1.5rem; /* Further reduced font size */
-        margin-bottom: 10px;
-    }
-
-    #survival-strategy-container {
-        grid-template-columns: 1fr; /* One box per row for mobile devices */
-        gap: 10px; /* Further reduced gap between boxes */
-    }
-
-    .strategy-box {
-        padding: 10px; /* Reduced padding */
-    }
-
-    .strategy-box h3 {
-        font-size: 1.2rem; /* Adjusted font size for mobile */
-    }
-
-    .strategy-box img {
-        height: 150px; /* Further reduced image height for mobile */
-    }
-
-    .modal-content h3 {
-        font-size: 1.4rem; /* Smaller heading font size */
-    }
-
-    .modal-content p {
-        font-size: 0.85rem; /* Smaller font for description */
-    }
-
-    .modal-content ol {
-        padding-left: 10px; /* Adjust padding for list */
-    }
-
-    .modal-content li {
-        font-size: 0.9rem; /* Adjusted list font size */
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Help Section */
-#help {
-    padding: 50px; /* More padding for a spacious look */
-    background-color: #ffffff; /* Full white background */
-    font-family: Arial, sans-serif;
-    margin: 0 auto; /* Centering the content */
-}
-
-/* Heading Styles */
-#help h2 {
-    text-align: center;
+  }
+  
+  .hero h2 {
     font-size: 2.5rem;
-    color: #05080c;
-    margin-bottom: 30px;
-}
-
-/* Help Blocks */
-.help-block {
-    margin-bottom: 40px;
-}
-
-.help-block h3 {
-    font-size: 2rem;
-    color: #060a07;
-    margin-bottom: 15px;
-    font-style: normal;
-}
-
-.help-block ul {
-    list-style: none;
-    padding-left: 0;
-}
-
-.help-block ul li {
+    margin-bottom: 1rem;
+  }
+  
+  .hero p {
     font-size: 1.2rem;
-    margin-bottom: 12px;
-    font-style: oblique;
-}
-
-.help-block a {
-    color: #fd0606; /* Subtle dark text */
+  }
+  
+  /* Section */
+  section {
+    padding: 3rem 1rem;
+  }
+  
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #fff;
+  }
+  
+  /* Resource Section */
+  .resource-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+  }
+  
+  .resource-card {
+    background-color: #222;
+    border-radius: 8px;
+    padding: 1rem;
+    width: 250px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    text-align: center;
+  }
+  
+  .resource-card:hover {
+    transform: translateY(-5px);
+    background-color: #444;
+  }
+  
+  .resource-card h3 {
+    font-size: 1.4rem;
+    color: #fff;
+  }
+  
+  .resource-card a {
+    color: #e63946;
+    font-size: 0.9rem;
+    text-transform: uppercase;
     text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
+  }
+  
+  .resource-card a.learn-more {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #e63946;
+    color: #fff;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .resource-card a.learn-more:hover {
+    background-color: #d62828;
+  }
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /* News Section */
+/* Base Styles for News Section */
+#news {
+  padding: 40px;
+  text-align: center;
 }
 
-.help-block a:hover {
-    color: #65717d; /* Blue hover effect for links */
+#news h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #ffffff; /* Make the heading black for contrast */
 }
 
-.help-block ul li strong {
-    color: #090909; /* Green for emphasis */
+/* News Container Grid */
+.news-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 boxes per row */
+  gap: 20px;
+  justify-items: center;
+}
+
+/* News Box Styling */
+.news-box {
+  background-color: #333; /* Dark gray (light black) background for the boxes */
+  border: 1px solid #444; /* Darker border for contrast */
+  padding: 15px; /* Reduced padding for a smaller box */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  width: 100%;
+  max-width: 300px; /* Max width of news box */
+  transition: transform 0.3s ease;
+  color: #fff; /* White text color for contrast */
+  position: relative;
+}
+
+/* Hover effect for news box */
+.news-box:hover {
+  transform: scale(1.05);
+}
+
+/* News Title */
+.news-box h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #fff; /* White color for the title */
+}
+
+/* News Description */
+.news-box p {
+  font-size: 1rem;
+  margin-bottom: 15px;
+  color: #ddd; /* Light gray text for description */
+}
+
+/* News Link Styling as a red button */
+.news-box a {
+  font-size: 1rem;
+  color: #fff; /* White text on the button */
+  text-decoration: none;
+  background-color: #f42a23; /* Red background */
+  padding: 10px 20px;
+  border-radius: 4px;
+  display: inline-block;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.news-box a:hover {
+  background-color: #ee5f5a; /* Darker red on hover */
+  text-decoration: none; /* No underline on hover */
 }
 
 
-/* Media Query for Tablets and Smaller Screens (max-width: 768px) */
+/* Style for the news image */
+.news-image {
+  width: 100%;
+  height: 150px; /* Reduced height of the image */
+  object-fit: cover; /* Crop image to fill the space */
+  border-radius: 8px;
+  margin-bottom: 10px; /* Reduced space between image and text */
+}
+
+
+
+/* Hover effect for news box */
+.news-box:hover {
+  transform: scale(1.05);
+}
+
+/* News Title */
+.news-box h3 {
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+  color: #fff; /* White color for the title */
+}
+
+/* News Description */
+.news-box p {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  color: #ddd; /* Light gray text for description */
+}
+
+/* News Link Styling as a red button */
+.news-box a {
+  font-size: 1rem;
+  color: #fff; /* White text on the button */
+  text-decoration: none;
+  background-color: #d9534f; /* Red background */
+  padding: 8px 16px;
+  border-radius: 4px;
+  display: inline-block;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.news-box a:hover {
+  background-color: #c9302c; /* Darker red on hover */
+  text-decoration: none; /* No underline on hover */
+}
+
+
+/* Media Query for Tablets (max-width: 768px) */
 @media (max-width: 768px) {
-    #help {
-        padding: 40px 20px; /* Reduced padding for smaller screens */
-    }
+  #news h2 {
+    font-size: 1.8rem;
+  }
 
-    #help h2 {
-        font-size: 2rem; /* Adjusted font size for headings */
-        margin-bottom: 20px; /* Reduced bottom margin */
-    }
+  .news-container {
+    grid-template-columns: repeat(2, 1fr); /* 2 boxes per row on tablets */
+    gap: 15px;
+  }
 
-    .help-block h3 {
-        font-size: 1.6rem; /* Smaller heading font size */
-        margin-bottom: 12px; /* Adjusted margin */
-    }
-
-    .help-block ul li {
-        font-size: 1rem; /* Smaller font for list items */
-        margin-bottom: 10px; /* Reduced margin */
-    }
-
-    .help-block a {
-        font-size: 1.1rem; /* Slightly smaller font for links */
-    }
+  .news-box {
+    max-width: 250px; /* Adjust max-width on smaller screens */
+  }
 }
 
 /* Media Query for Mobile Devices (max-width: 480px) */
 @media (max-width: 480px) {
-    #help {
-        padding: 30px 15px; /* Reduced padding for mobile */
-    }
+  #news h2 {
+    font-size: 1.5rem;
+  }
 
-    #help h2 {
-        font-size: 1.5rem; /* Further reduced font size */
-        margin-bottom: 15px; /* Reduced margin */
-    }
+  .news-container {
+    grid-template-columns: 1fr; /* 1 box per row on mobile */
+    gap: 10px;
+  }
 
-    .help-block h3 {
-        font-size: 1.4rem; /* Further reduced heading size */
-        margin-bottom: 10px; /* Reduced margin */
-    }
-
-    .help-block ul li {
-        font-size: 0.9rem; /* Smaller font size for list items */
-        margin-bottom: 8px; /* Reduced space between list items */
-    }
-
-    .help-block a {
-        font-size: 1rem; /* Smaller font size for links */
-    }
+  .news-box {
+    max-width: 100%; /* Full width of the container on mobile */
+  }
 }
 
 
@@ -854,6 +310,7 @@ input[type="number"] {
 
 
 
+  
 
 
 
@@ -873,235 +330,76 @@ input[type="number"] {
 
 
 
-
-
-/* Black background styling for the login section */
-#login-section {
-    display: block; /* Ensure it remains displayed */
-    background-color: #000; /* Black background */
-    color: #fff; /* White text for contrast */
-    padding: 50px; /* Add padding for spacing */
-    border-radius: 10px; /* Rounded corners for a sleek look */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7); /* Shadow for depth */
-    max-width: 600px; /* Restrict width for a centered appearance */
-    margin: 50px auto; /* Center the section horizontally */
-}
-
-/* Login section heading */
-#login-section h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: #fff; /* White heading text */
-    text-align: center; /* Center-align heading */
-}
-
-/* Login form styling */
-#login-form {
+  /* Donate Section */
+  .donate-list {
     display: flex;
-    flex-direction: column; /* Stack elements vertically */
-    gap: 15px; /* Add space between form elements */
-}
-
-/* Input fields */
-#login-form input {
-    padding: 10px;
-    font-size: 1rem;
-    border: 1px solid #444; /* Subtle border for inputs */
-    border-radius: 5px;
-    background-color: rgba(255, 255, 255, 0.1); /* Transparent input background */
-    color: #fff; /* White text inside inputs */
-}
-
-/* Placeholder text color */
-#login-form input::placeholder {
-    color: #f9f7f7; /* Light gray for placeholders */
-}
-
-/* Focus styling for inputs */
-#login-form input:focus {
-    outline: none;
-    border-color: #0b0707; /* White border on focus */
-}
-
-/* Login button */
-#login-form button {
-    padding: 10px;
-    font-size: 1rem;
-    background-color: #333; /* Dark button background */
-    color: #f4f0f0; /* White text */
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  .donate-card {
+    background-color: #333;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  .donate-card h3 {
+    font-size: 1.4rem;
+    color: #e63946;
+  }
+  
+  .donate-card button {
+    background-color: #e63946;
     border: none;
+    padding: 0.5rem 1rem;
+    color: #fff;
+    font-size: 1rem;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-}
-
-/* Hover effect for login button */
-#login-form button:hover {
-    background-color: #555; /* Lighter gray on hover */
-}
-
-/* Center-align form elements and adjust layout */
-#login-form label {
-    color: #0a0707; /* Ensure labels are white */
+  }
+  
+  .donate-card button:hover {
+    background-color: #d62828;
+  }
+  
+  /* Footer */
+  footer {
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+  }
+  
+  footer p {
     font-size: 1rem;
-}
-
-/* Optional: Style the body to ensure the login section stands out */
-body {
-    background-color: #0b0b0b; /* Light gray for overall background */
-    margin: 0;
-    font-family: Arial, sans-serif;
-    text-emphasis-color: white;
-}
-
-
-
-
-/* Footer */
-footer {
-    background-color: #0b0808;
-    color: #ffffff;
-    text-align: center;
-    padding: 10px;
-}
-
-footer p {
-    margin: 0;
-}
-
-/* Profile Section */
-#profile {
-    background-color: #0a0808;
-    border-radius: 8px;
-    padding: 20px;
-    text-align: center;
-    max-width: 400px;
-    margin: 20px auto;
-}
-
-#profile button {
-    background-color: #070807;
-    color: rgb(12, 4, 4);
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-#profile button:hover {
-    background-color: #0c100d;
-}
-
-/* Tips Section */
-#tips ul {
-    list-style: none;
-    padding: 0;
-}
-
-#tips ul li {
-    margin: 5px 0;
-}
-
-#tips a {
-    text-decoration: none;
-    color: #110909;
-    font-weight: bold;
-}
-
-#tips a:hover {
-    color: #040b04;
-}
-
-
-
-
-
-
-
-/* General Styles */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    background-color: #f9f9f9;
-}
-
-/* Home Section (White Background) */
-#home {
-    background-color: #fff; /* White background */
-}
-
-/* Donate Section (Black Background) */
-#donate {
-    background-color: #000; /* Black background */
-}
-
-/* Survival Strategy Section (White Background) */
-#survival-strategy {
-    background-color: #fff; /* White background */
-}
-
-#login-section {
-    background-color: #000; /* Black background */
-}
-
-/* Media Query for Tablets and Smaller Screens (max-width: 768px) */
-@media (max-width: 768px) {
-    #login-section {
-        padding: 30px; /* Reduced padding for smaller screens */
-        max-width: 100%; /* Allow the login section to take full width on smaller devices */
-        margin: 20px; /* Reduced margin for better fit */
+  }
+  
+  /* Media Queries */
+  @media (max-width: 768px) {
+    nav ul {
+      flex-direction: column;
+      align-items: center;
     }
-
-    #login-section h2 {
-        font-size: 1.6rem; /* Smaller font size for the heading */
-        margin-bottom: 15px; /* Reduced space below the heading */
+  
+    .donate-list {
+      flex-direction: column;
+      align-items: center;
     }
-
-    #login-form {
-        gap: 10px; /* Reduced gap between form elements */
+  
+    .news-grid {
+      grid-template-columns: 1fr;
     }
-
-    #login-form input {
-        padding: 8px; /* Reduced padding inside inputs */
-        font-size: 0.9rem; /* Smaller font size for inputs */
+  
+    .resource-card {
+      width: 100%;
     }
-
-    #login-form button {
-        padding: 8px; /* Reduced button padding */
-        font-size: 0.9rem; /* Smaller button font size */
+  
+    .donate-card {
+      width: 100%;
     }
-}
-
-/* Media Query for Mobile Devices (max-width: 480px) */
-@media (max-width: 480px) {
-    #login-section {
-        padding: 20px; /* Further reduced padding for mobile */
-        max-width: 100%; /* Full width on small devices */
-        margin: 10px; /* Very small margin */
-    }
-
-    #login-section h2 {
-        font-size: 1.4rem; /* Further reduced font size for the heading */
-        margin-bottom: 10px; /* Reduced space below the heading */
-    }
-
-    #login-form {
-        gap: 8px; /* Reduced gap for more compact form */
-    }
-
-    #login-form input {
-        padding: 6px; /* Reduced input padding */
-        font-size: 0.9rem; /* Smaller font size for inputs */
-    }
-
-    #login-form button {
-        padding: 8px; /* Smaller button padding */
-        font-size: 0.9rem; /* Smaller button font size */
-    }
-
-    #login-form label {
-        font-size: 0.9rem; /* Smaller font size for labels */
-    }
-}
+  }

@@ -1,129 +1,124 @@
-document.addEventListener("DOMContentLoaded", function () {
-    // Survival Strategies data for disaster preparedness
-    const survivalStrategiesData = {
-        earthquakes: {
-            title: "Earthquake Survival Strategy",
-            description: `
-                <ol>
-                    <li>Secure heavy items like shelves, mirrors, and electronics.</li>
-                    <li>Identify safe spots under sturdy furniture or against interior walls.</li>
-                    <li>Prepare an emergency kit with essential supplies.</li>
-                    <li>Stay away from windows, glass, and exterior walls during a quake.</li>
-                    <li>Practice "Drop, Cover, and Hold On" drills regularly.</li>
-                </ol>`,
-            image: "images/earthquake.jpg"  // Replace with actual image path
-        },
-        floods: {
-            title: "Flood Survival Strategy",
-            description: `
-                <ol>
-                    <li>Know your area's flood risk and evacuation routes.</li>
-                    <li>Keep important documents in waterproof containers.</li>
-                    <li>Avoid walking or driving through floodwaters.</li>
-                    <li>Elevate electrical appliances and install sump pumps.</li>
-                    <li>Have a communication plan with your family.</li>
-                </ol>`,
-            image: "images/flood.jpg"  // Replace with actual image path
-        },
-        tsunamis: {
-            title: "Tsunami Survival Strategy",
-            description: `
-                <ol>
-                    <li>Know the natural warning signs, such as sudden sea level changes.</li>
-                    <li>Move immediately to higher ground when a warning is issued.</li>
-                    <li>Avoid the beach and coastal areas during a tsunami alert.</li>
-                    <li>Stay informed through radio or local emergency alerts.</li>
-                    <li>Have a family evacuation and communication plan.</li>
-                </ol>`,
-            image: "images/tsunami.jpg"  // Replace with actual image path
-        },
-        wildfires: {
-            title: "Wildfire Survival Strategy",
-            description: `
-                <ol>
-                    <li>Create a defensible space by clearing flammable materials near your home.</li>
-                    <li>Have an emergency evacuation plan and practice it regularly.</li>
-                    <li>Stay tuned to local alerts and evacuate promptly if directed.</li>
-                    <li>Use fire-resistant building materials for your home.</li>
-                    <li>Keep emergency supplies, including N95 masks, ready.</li>
-                </ol>`,
-            image: "images/wildfire.jpg"  // Replace with actual image path
-        },
-        landslides: {
-            title: "Landslide Survival Strategy",
-            description: `
-                <ol>
-                    <li>Monitor signs of land movement, such as cracks in the ground.</li>
-                    <li>Avoid building or living near steep slopes or areas prone to landslides.</li>
-                    <li>Have an evacuation plan and know your area's hazard maps.</li>
-                    <li>Ensure proper drainage to reduce soil saturation near your home.</li>
-                    <li>Stay informed about weather conditions, especially during heavy rains.</li>
-                </ol>`,
-            image: "images/landslide.jpg"  // Replace with actual image path
-        },
-        droughts: {
-            title: "Drought Survival Strategy",
-            description: `
-                <ol>
-                    <li>Conserve water by fixing leaks and using water-saving appliances.</li>
-                    <li>Store emergency water supplies for drinking and sanitation.</li>
-                    <li>Practice xeriscaping (landscaping with drought-tolerant plants).</li>
-                    <li>Be aware of water restrictions in your area.</li>
-                    <li>Plan for reduced agricultural yields if you rely on farming.</li>
-                </ol>`,
-            image: "images/drought.jpg"  // Replace with actual image path
-        }
-    };
+// Your Custom Search Engine ID and API Key
+const cx = '544406d1dbf464978';  // Custom Search Engine ID cx=544406d1dbf464978
+const apiKey = 'AIzaSyBbPY1L9FBt03fc6iixSD563xVshNe-ZC4';  // API Key
 
-    // Generate the survival strategy boxes
-    const survivalStrategyContainer = document.getElementById('survival-strategy-container');
-    Object.keys(survivalStrategiesData).forEach(key => {
-        const strategy = survivalStrategiesData[key];
-        const strategyBox = document.createElement('div');
-        strategyBox.classList.add('strategy-box');
-        strategyBox.innerHTML = `
-            <h3>${strategy.title}</h3>
-            <img src="${strategy.image}" alt="${strategy.title}">
-            <p><a href="#" class="view-strategy" data-type="${key}">View Strategy</a></p>
-        `;
-        survivalStrategyContainer.appendChild(strategyBox);
+// Function to trigger search for donation websites based on category
+function searchDonateWebsites(query) {
+  // Construct the URL for your Custom Search Engine API request
+  const searchUrl = `https://www.googleapis.com/customsearch/v1?q=${encodeURIComponent(query)}&cx=${cx}&key=${apiKey}`;
+  
+  // Fetch the search results using the Custom Search Engine API
+  fetch(searchUrl)
+    .then(response => response.json())
+    .then(data => {
+      // Check if there are any search results
+      if (data.items && data.items.length > 0) {
+        // Get the first result's URL
+        const firstResultUrl = data.items[0].link;
+
+        // Construct the search engine result page URL using cx and query
+        const searchResultsUrl = `https://www.google.com/search?q=${encodeURIComponent(query)}&cx=${cx}`;
+
+        // Open the search results page from your custom search engine in a new tab
+        window.open(searchResultsUrl, '_blank');
+      } else {
+        alert('No results found!');
+      }
+    })
+    .catch(error => {
+      console.error('Error fetching search results:', error);
+      alert('An error occurred while fetching search results.');
     });
+}
 
-    // Show detailed strategy when clicked in the Survival Strategies section
-    document.querySelectorAll('.view-strategy').forEach(link => {
-        link.addEventListener('click', function (event) {
-            event.preventDefault(); // Prevent navigation
-            const type = this.getAttribute('data-type'); // Get disaster type
-            const content = survivalStrategiesData[type]; // Fetch content
+// Function to handle click on the "Donate Now" button
+function handleDonateClick(category) {
+  let query = '';
+  
+  // Determine the search query based on the category
+  if (category === 'shelter-food') {
+    query = 'donate for shelter and food';
+  } else if (category === 'legal-assistance') {
+    query = 'donate for legal assistance refugees';
+  } else if (category === 'healthcare') {
+    query = 'donate for healthcare refugees';
+  } else if (category === 'education-jobs') {
+    query = 'donate for education and jobs refugees';
+  } else if (category === 'emergency-support') {
+    query = 'donate for emergency support refugees';
+  } else if (category === 'housing-reconstruction') {
+    query = 'donate for housing and reconstruction refugees';
+  } else if (category === 'child-protection') {
+    query = 'donate for child protection refugees';
+  } else if (category === 'clean-water') {
+    query = 'donate for clean water refugees';
+  }
 
-            if (content) {
-                const modal = document.createElement('div');
-                modal.classList.add('modal');
-                modal.innerHTML = `
-                    <div class="modal-content">
-                        <h3>${content.title}</h3>
-                        <p>${content.description}</p>
-                        <span class="close">&times;</span>
-                    </div>
-                `;
-                document.body.appendChild(modal);
+  // Call the search function for the respective category
+  searchDonateWebsites(query);
+}
 
-                modal.style.display = "flex"; // Show modal
+// Function to handle click on the "Learn More" link
+function handleLearnMoreClick(category) {
+  let query = '';
+  
+  // Determine the search query based on the category
+  if (category === 'shelter') {
+    query = 'shelter resources for refugees';
+  } else if (category === 'food') {
+    query = 'food distribution resources for refugees';
+  } else if (category === 'legal-assistance') {
+    query = 'legal assistance resources for refugees';
+  } else if (category === 'healthcare') {
+    query = 'healthcare resources for refugees';
+  }
 
-                // Close modal when "X" is clicked
-                modal.querySelector('.close').addEventListener('click', function () {
-                    modal.style.display = "none";
-                });
+  // Call the search function for the respective category
+  searchDonateWebsites(query);
+}
 
-                // Close modal when clicking outside the content
-                window.addEventListener('click', function (event) {
-                    if (event.target === modal) {
-                        modal.style.display = "none";
-                    }
-                });
-            }
-        });
-    });
+// Event listeners for each donation category button
+document.getElementById('shelter-food-btn').addEventListener('click', function() {
+  handleDonateClick('shelter-food');
+});
+
+document.getElementById('legal-assistance-btn').addEventListener('click', function() {
+  handleDonateClick('legal-assistance');
+});
+
+document.getElementById('healthcare-btn').addEventListener('click', function() {
+  handleDonateClick('healthcare');
+});
+
+document.getElementById('education-jobs-btn').addEventListener('click', function() {
+  handleDonateClick('education-jobs');
+});
+
+document.getElementById('emergency-support-btn').addEventListener('click', function() {
+  handleDonateClick('emergency-support');
+});
+
+// Event listeners for new donation categories
+document.getElementById('housing-reconstruction-btn').addEventListener('click', function() {
+  handleDonateClick('housing-reconstruction');
+});
+
+document.getElementById('child-protection-btn').addEventListener('click', function() {
+  handleDonateClick('child-protection');
+});
+
+document.getElementById('clean-water-btn').addEventListener('click', function() {
+  handleDonateClick('clean-water');
+});
+
+// Event listeners for "Learn More" links in Resources section
+document.querySelectorAll('.learn-more').forEach((link) => {
+  link.addEventListener('click', function(e) {
+    e.preventDefault();
+    
+    const resourceCategory = this.getAttribute('data-category');
+    handleLearnMoreClick(resourceCategory);
+  });
 });
 
 
@@ -137,276 +132,66 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
+// Function to fetch and display refugee-related news with images
+async function fetchRefugeeNews() {
+  const apiKey = 'e5e4dc4e12af4f8880e33e94cf9d01cf'; // Your NewsAPI key
+  // Using a more refined query to fetch refugee-related news
+  const apiUrl = `https://newsapi.org/v2/everything?q=refugee OR asylum OR displacement&language=en&apiKey=${apiKey}`;
 
-// donation part:
-// Function to fetch crisis data from ReliefWeb and display it in the donation section
-async function fetchDonationCrisisData() {
-    try {
-        const response = await fetch('https://api.reliefweb.int/v1/reports?query[value]=disaster&limit=4');
-        const crisisData = await response.json();
-        const donationContainer = document.getElementById('donation-container');
-        donationContainer.innerHTML = ''; // Clear existing donation boxes
+  try {
+      const response = await fetch(apiUrl);
+      const data = await response.json();
 
-        // Loop through each crisis and create a donation box
-        for (let crisis of crisisData.data) {
-            const donationBox = document.createElement('div');
-            donationBox.classList.add('donation-box');
+      if (data.status === 'ok' && data.articles.length > 0) {
+          // Get the news container element
+          const newsContainer = document.getElementById('newsContainer');
+          newsContainer.innerHTML = ''; // Clear previous news if any
 
-            // Fetch an image based on the crisis title (or keywords)
-            const imageUrl = await fetchImage(crisis.fields.title.toLowerCase());
+          // Limit the number of news to 8 (2 rows, 4 boxes per row)
+          const articlesToDisplay = data.articles.slice(0, 8);
 
-            // Donation Box Content
-            const image = document.createElement('img');
-            image.src = imageUrl;
-            image.alt = crisis.fields.title;
-            image.classList.add('donation-image');
+          // Loop through the news articles and create news boxes
+          articlesToDisplay.forEach(article => {
+              const newsBox = document.createElement('div');
+              newsBox.classList.add('news-box');
 
-            const header = document.createElement('div');
-            header.classList.add('donation-header');
-            header.innerHTML = `<h3>${crisis.fields.title} <span>Donate Now</span></h3>`;
+              // Create and append the image if available
+              if (article.urlToImage) {
+                  const newsImage = document.createElement('img');
+                  newsImage.src = article.urlToImage;
+                  newsImage.alt = article.title;
+                  newsImage.classList.add('news-image');
+                  newsBox.appendChild(newsImage);
+              }
 
-            const content = document.createElement('div');
-            content.classList.add('donation-content');
+              // Create and append article title
+              const newsTitle = document.createElement('h3');
+              newsTitle.innerText = article.title;
+              newsBox.appendChild(newsTitle);
 
-            const description = document.createElement('p');
-            description.textContent = `Help those affected by this disaster. Your contribution will provide essential relief.`;
-            description.classList.add('donation-description'); // Add a specific class for styling
+              // Create and append article description
+              const newsDescription = document.createElement('p');
+              newsDescription.innerText = article.description || 'No description available.';
+              newsBox.appendChild(newsDescription);
 
-            // Create the "Donate Now" button with updated functionality
-            const donateButton = document.createElement('button');
-            donateButton.classList.add('donate-btn');
-            donateButton.textContent = 'Donate Now';
-            donateButton.onclick = () => {
-                // Open the Google Custom Search Engine page with the query related to donation
-                const searchQuery = encodeURIComponent(crisis.fields.title + " donate");
-                const searchUrl = `https://cse.google.com/cse?cx=a6329fc247e6a4083&q=${searchQuery}`;
-                window.open(searchUrl, '_blank');  // Opens the search engine in a new tab
-            };
+              // Create and append "Read More" link
+              const newsLink = document.createElement('a');
+              newsLink.href = article.url;
+              newsLink.target = "_blank"; // Open in a new tab
+              newsLink.innerText = 'Read More';
+              newsBox.appendChild(newsLink);
 
-            content.appendChild(description);
-            content.appendChild(donateButton);
-
-            // Append everything to the donationBox
-            donationBox.appendChild(header);
-            donationBox.appendChild(image);
-            donationBox.appendChild(content);
-
-            // Append the donation box to the container
-            donationContainer.appendChild(donationBox);
-        }
-    } catch (error) {
-        console.error('Error fetching donation crisis data:', error);
-    }
+              // Append the news box to the container
+              newsContainer.appendChild(newsBox);
+          });
+      } else {
+          document.getElementById('newsContainer').innerHTML = 'No refugee-related news available at the moment.';
+      }
+  } catch (error) {
+      console.error('Error fetching news:', error);
+      document.getElementById('newsContainer').innerHTML = 'Failed to load news. Please try again later.';
+  }
 }
 
-// Call the function to fetch crisis data when the page loads
-fetchDonationCrisisData();
-
-
-
-
-
-
-
-
-
-// home part: 
-
-// Function to fetch image from Google Custom Search API based on a query (e.g., crisis title)
-async function fetchImage(query) {
-    const apiKey = 'AIzaSyA0xm6hS-z5Xac571CVdu-Ye6XVnxnrinM';  // Replace with your Google API key
-    const cx = 'a6329fc247e6a4083';  // Your Custom Search Engine ID
-    const url = `https://www.googleapis.com/customsearch/v1?q=${query}&searchType=image&cx=${cx}&key=${apiKey}`;
-
-    try {
-        const response = await fetch(url);
-        const data = await response.json();
-
-        // Check if images are available in the response
-        if (data.items && data.items.length > 0) {
-            const imageUrl = data.items[0].link;  // Get the first image URL
-            console.log("Image URL:", imageUrl);  // Log the image URL for debugging
-            return imageUrl;
-        } else {
-            console.error("No image found for query:", query);  // Log error if no image is found
-            return 'https://via.placeholder.com/342x242';  // Default placeholder image
-        }
-    } catch (error) {
-        console.error("Error fetching image from Google Custom Search:", error);
-        return 'https://via.placeholder.com/342x242';  // Default placeholder image
-    }
-}
-
-// Function to fetch crisis data from ReliefWeb and display it
-async function fetchCrisisData() {
-    try {
-        const response = await fetch('https://api.reliefweb.int/v1/reports?query[value]=disaster&limit=4');
-        const crisisData = await response.json();
-        const crisisBoxesContainer = document.getElementById('crisis-boxes-container');
-        crisisBoxesContainer.innerHTML = '';  // Clear existing boxes
-
-        for (let crisis of crisisData.data) {
-            const crisisBox = document.createElement('div');
-            crisisBox.classList.add('crisis-box');
-            
-            // Fetch an image based on the crisis title (or keywords) using the updated fetchImage function
-            const imageUrl = await fetchImage(crisis.fields.title.toLowerCase());
-
-            const image = document.createElement('img');
-            image.src = imageUrl;  // Set the image source
-            image.alt = crisis.fields.title;
-            image.classList.add('crisis-image');
-            
-            // Add event listener to check if the image is loaded correctly
-            image.onload = () => {
-                console.log("Image loaded successfully:", imageUrl);
-            };
-            image.onerror = () => {
-                console.error("Failed to load image:", imageUrl);
-                image.src = 'https://via.placeholder.com/342x242';  // Fallback placeholder image
-            };
-            
-            const title = document.createElement('h3');
-            title.classList.add('crisis-title');
-            title.textContent = crisis.fields.title;
-            
-            const date = document.createElement('p');
-            date.classList.add('crisis-date');
-            date.textContent = `Start Date: ${crisis.fields.date || 'N/A'}`;
-            
-            // Remove the Donate button and just keep the Read More button
-            const readMoreButton = document.createElement('button');
-            readMoreButton.classList.add('read-more-button');
-            readMoreButton.textContent = 'Read More';
-            readMoreButton.onclick = () => {
-                // Construct the search query URL using the Programmable Search Engine
-                const query = encodeURIComponent(crisis.fields.title); // Encode the title for the URL
-                const searchEngineUrl = `https://cse.google.com/cse?cx=a6329fc247e6a4083&q=${query}`;
-                
-                // Open the search engine URL in a new tab
-                window.open(searchEngineUrl, '_blank');
-            };
-
-            // Append everything to the crisisBox
-            crisisBox.appendChild(image);
-            crisisBox.appendChild(title);
-            // crisisBox.appendChild(date);
-            crisisBox.appendChild(readMoreButton);  // Only append the Read More button
-            
-            // Append the crisisBox to the container
-            crisisBoxesContainer.appendChild(crisisBox);
-        }
-    } catch (error) {
-        console.error('Error fetching crisis data:', error);
-    }
-}
-
-// Call the function to fetch data when the page loads
-fetchCrisisData();
-
-
-
-
-
-
-// profile login 
-document.addEventListener("DOMContentLoaded", function () {
-    const profileLink = document.querySelector('a[href="#profile-section"]');
-    const loginSection = document.getElementById('login-section');
-    const profileSection = document.getElementById('profile-section');
-    const loginForm = document.getElementById('login-form');
-    const profileDetailsContainer = document.getElementById('profile-details');
-
-    // Check if user data exists in localStorage
-    let user = JSON.parse(localStorage.getItem('user')) || null;
-
-    // Initialize view based on login state
-    if (user) {
-        showProfileSection();
-        populateProfileDetails();
-    } else {
-        showLoginSection();
-    }
-
-    profileLink.addEventListener('click', (event) => {
-        event.preventDefault();
-
-        if (user) {
-            showProfileSection();
-            profileSection.scrollIntoView({ behavior: 'smooth' });
-        } else {
-            showLoginSection();
-            loginSection.scrollIntoView({ behavior: 'smooth' });
-        }
-    });
-
-    // Handle login form submission
-    loginForm.addEventListener('submit', (event) => {
-        event.preventDefault();
-
-        // Simulate saving user data (Replace this with API calls in a real application)
-        const formData = new FormData(loginForm);
-        user = {
-            name: formData.get('name'),
-            email: formData.get('email'),
-            joinedOn: new Date().toLocaleDateString(),
-            posts: 0,
-            donations: 0
-        };
-
-        // Save user data in localStorage
-        localStorage.setItem('user', JSON.stringify(user));
-
-        // Show profile section and populate details
-        showProfileSection();
-        populateProfileDetails();
-        profileSection.scrollIntoView({ behavior: 'smooth' });
-    });
-
-    // Populate profile details dynamically
-    function populateProfileDetails() {
-        if (user) {
-            profileDetailsContainer.innerHTML = `
-                <h2>${user.name}</h2>
-                <p><strong>Joined on:</strong> ${user.joinedOn}</p>
-                <p><strong>Email:</strong> ${user.email}</p>
-                    `;
-        }
-    }
-
-    // Show login section
-    function showLoginSection() {
-        loginSection.style.display = 'block';
-        profileSection.style.display = 'none';
-    }
-
-    // Show profile section
-    function showProfileSection() {
-        loginSection.style.display = 'none';
-        profileSection.style.display = 'block';
-    }
-});
-
-
-// const container = document.querySelector('.donation-container');
-
-// campaigns.forEach((campaign) => {
-//     const campaignHTML = `
-//         <div class="donation-box">
-//             <div class="donation-header">
-//                 <h3>${campaign.location}: Relief Campaign</h3>
-//             </div>
-//             <div class="donation-content">
-//                 <img src="${campaign.image}" alt="Relief Campaign in ${campaign.location}" class="donation-image">
-//                 <div class="donation-details">
-//                     <p class="location"><strong>Location:</strong> ${campaign.location}</p>
-//                     <p>${campaign.description}</p>
-//                     <p><strong>Total Amount Needed:</strong> <span class="highlight">${campaign.needed} ₹</span></p>
-//                     <p><strong>Total Amount Collected:</strong> <span class="highlight">${campaign.collected} ₹</span></p>
-//                     ${campaign.status ? `<p class="status">${campaign.status}</p>` : ''}
-//                 </div>
-//             </div>
-//             <p class="launch-date"><strong>Launched on:</strong> ${campaign.launchDate}</p>
-//         </div>`;
-//     container.innerHTML += campaignHTML;
-// });
+// Fetch the news when the page loads
+window.onload = fetchRefugeeNews;
