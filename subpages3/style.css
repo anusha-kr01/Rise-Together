@@ -1,0 +1,957 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+/* Header Styling */
+header {
+    background-color: #FF6347; /* Warm tone for encouragement */
+    padding: 20px;
+    color: white;
+}
+
+/* Logo Section */
+header .logo {
+    text-align: center;
+    margin-bottom: 20px;
+    color: white;
+}
+
+header h1 {
+    margin-bottom: 5px;
+    font-size: 2.5rem;
+    font-family: 'Georgia', serif; /* Adds a touch of elegance */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+header p {
+    font-size: 1.2rem;
+    font-style: italic; /* Adds a subtle uplifting feel */
+    margin-top: 5px;
+}
+
+/* Navigation Bar Styling */
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+header nav ul li {
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: #b9b7b5; /* Soft peach tone for hover effect */
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Use flexbox to arrange items in a row */
+}
+
+ul li {
+    margin: 0;
+    padding: 10px 20px; /* Add padding to space out the items */
+    position: relative;
+}
+
+ul li a {
+    text-decoration: none;
+    color: #333; /* Default link color */
+    font-size: 1.2rem;
+}
+
+/* Add vertical line between list items */
+ul li:not(:last-child) {
+    border-right: 2px solid #ccc; /* Vertical line */
+}
+
+ul li a:hover {
+    color: #616362; /* Change color when hovering over the link */
+}
+/* Responsive Design for Medium Screens */
+@media (max-width: 1024px) {
+    header h1 {
+        font-size: 2rem; /* Adjust header font size */
+    }
+
+    header p {
+        font-size: 1rem; /* Reduce subheading font size */
+    }
+
+    header nav ul {
+        flex-direction: column; /* Stack navigation links vertically */
+        align-items: center; /* Center-align the links */
+    }
+
+    header nav ul li {
+        margin: 10px 0; /* Add spacing between stacked links */
+    }
+
+    ul li {
+        padding: 8px 15px; /* Adjust padding for smaller screens */
+    }
+
+    ul li a {
+        font-size: 1rem; /* Reduce link font size */
+    }
+}
+
+/* Responsive Design for Small Screens */
+@media (max-width: 768px) {
+    header {
+        padding: 15px; /* Reduce header padding */
+    }
+
+    header h1 {
+        font-size: 1.8rem; /* Further reduce header font size */
+    }
+
+    header p {
+        font-size: 0.9rem; /* Reduce subheading font size */
+    }
+
+    ul {
+        flex-direction: column; /* Stack the list items vertically */
+        align-items: center; /* Center-align the list */
+    }
+
+    ul li {
+        padding: 10px; /* Adjust padding for better spacing */
+    }
+
+    ul li:not(:last-child) {
+        border-right: none; /* Remove vertical lines */
+        border-bottom: 1px solid #ccc; /* Add horizontal separators */
+    }
+
+    ul li a {
+        font-size: 0.9rem; /* Reduce link font size further */
+    }
+}
+
+/* Responsive Design for Very Small Screens */
+@media (max-width: 480px) {
+    header {
+        text-align: center;
+    }
+
+    header h1 {
+        font-size: 1.5rem; /* Reduce font size for extra small screens */
+    }
+
+    header p {
+        font-size: 0.8rem;
+    }
+
+    ul li {
+        padding: 8px; /* Reduce padding for compact design */
+    }
+
+    ul li a {
+        font-size: 0.8rem; /* Further reduce link font size */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+#hero {
+    /* background: url('images/suicide.jpeg') no-repeat center center/cover; */
+
+    /* background: url('images/suicide.jpeg') no-repeat center center/cover; */
+    color: white;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+#hero .hero-content {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+#hero p {
+    font-size: 1.2rem;
+}
+
+#hero button {
+    background-color: #FF6347;
+    color: white;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#hero button:hover {
+    background-color: #e5533d;
+}
+
+/* Medium Screens */
+@media (max-width: 1024px) {
+    #hero {
+        height: 300px; /* Reduce height */
+        padding: 15px; /* Adjust padding */
+    }
+
+    #hero .hero-content {
+        max-width: 500px; /* Narrow the content */
+        padding: 15px;
+    }
+
+    #hero h2 {
+        font-size: 2rem; /* Adjust heading size */
+    }
+
+    #hero p {
+        font-size: 1rem; /* Adjust paragraph size */
+    }
+
+    #hero button {
+        font-size: 1rem; /* Adjust button size */
+        padding: 8px 16px;
+    }
+}
+
+/* Small Screens */
+@media (max-width: 768px) {
+    #hero {
+        height: 250px; /* Further reduce height */
+        padding: 10px; /* Smaller padding */
+    }
+
+    #hero .hero-content {
+        max-width: 400px; /* Reduce content width */
+        padding: 10px;
+    }
+
+    #hero h2 {
+        font-size: 1.8rem; /* Smaller heading */
+    }
+
+    #hero p {
+        font-size: 0.9rem; /* Smaller paragraph */
+    }
+
+    #hero button {
+        font-size: 0.9rem; /* Smaller button */
+        padding: 7px 14px;
+    }
+}
+
+/* Very Small Screens */
+@media (max-width: 480px) {
+    #hero {
+        height: 200px; /* Compact height */
+    }
+
+    #hero .hero-content {
+        max-width: 300px; /* Further narrow content */
+    }
+
+    #hero h2 {
+        font-size: 1.5rem; /* Compact heading */
+    }
+
+    #hero p {
+        font-size: 0.8rem; /* Compact paragraph */
+    }
+
+    #hero button {
+        font-size: 0.8rem; /* Compact button */
+        padding: 6px 12px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* help */
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1a1a1a;  /* Dark background */
+    color: #fff;  /* Light text for contrast */
+}
+
+header {
+    background-color: #333;  /* Dark grey background */
+    padding: 20px;
+    text-align: center;
+    color: silver;  /* Silver color for logo text */
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+}
+
+header p {
+    font-size: 1.2rem;
+}
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1a1a1a;  /* Dark background */
+    color: #fff;  /* Light text for contrast */
+}
+
+header {
+    background-color: #333;  /* Dark grey background */
+    padding: 20px;
+    text-align: center;
+    color: silver;  /* Silver color for logo text */
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+}
+
+header p {
+    font-size: 1.2rem;
+}
+
+
+
+
+
+
+
+
+
+
+/* Help Blocks Layout */
+.help-block {
+    margin-bottom: 40px;
+}
+
+.help-block h3 {
+    font-size: 2rem;
+    color: #060a07;
+    margin-bottom: 15px;
+    font-style: normal;
+}
+
+.help-block ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.help-block ul li {
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+    font-style: oblique;
+}
+
+.help-block a {
+    color: #fd0606; /* Subtle dark text */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.help-block a:hover {
+    color: #65717d; /* Blue hover effect for links */
+}
+
+.help-block ul li strong {
+    color: #090909; /* Green for emphasis */
+}
+/* Media Query for Smaller Screens (Mobile/Tablets) */
+@media (max-width: 768px) {
+    #help {
+        display: block; /* Stack all help boxes vertically */
+    }
+
+    .help-box {
+        width: 100%; /* Each help box takes the full width */
+        margin: 10px 0; /* Space between stacked boxes */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Home Section with Full-Screen Background */
+#hero {
+    background-image: url('suicide.jpeg'); /* Replace with your image URL */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+#hero h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Add shadow for better contrast */
+}
+
+#hero button {
+    background-color: #FF0000; /* Bright red button */
+    color: white;
+    font-size: 1.5rem;
+    padding: 15px 30px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-shadow: none; /* No text shadow on the button */
+}
+
+#hero button:hover {
+    background-color: #cc0000;
+}
+
+/* Media Query for Smaller Screens (Mobile/Tablets) */
+@media (max-width: 768px) {
+    .help-box {
+        width: 100%; /* Each box takes the full width of its container */
+        margin-bottom: 20px; /* Space between each box */
+    }
+
+    /* Optionally, if the boxes are in a flex or grid container, adjust the layout */
+    #help {
+        display: block; /* Stack them vertically */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#help {
+    padding: 40px 20px;
+    background-color: #080808;
+    color: white;
+    text-align: center;
+}
+
+#help h1 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #f1f1f1;
+}
+
+.help-box {
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px;
+    display: inline-block;
+    width: 18%; /* Set width for a box layout */
+    vertical-align: top;
+    text-align: left;
+    color: #ddd;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.help-box:hover {
+    transform: scale(1.05);
+}
+
+.help-box h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #e93232;
+}
+
+.help-box p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.search-help {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.search-help p {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: #f1f1f1;
+}
+
+#searchBtn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #f51e1e;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#searchBtn:hover {
+    background-color: #626664;
+}
+
+/* Media Query for Smaller Screens (Mobile/Tablets) */
+@media (max-width: 768px) {
+    /* Stack each box vertically, each taking full width */
+    .help-box {
+        width: 100%; /* Each box will take the full width */
+        display: block; /* Ensures they are stacked vertically */
+        margin-bottom: 20px; /* Adds spacing between the boxes */
+    }
+
+    /* Optional: Adjust the text alignment or padding if needed */
+    #help {
+        padding: 20px; /* Adjust padding as needed for smaller screens */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+footer {
+    background-color: #333;  /* Dark grey background */
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: 40px;
+}
+
+footer p {
+    font-size: 1rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#videos {
+    padding: 40px 20px;
+    background-color: #080808;
+    color: white;
+    text-align: center;
+}
+
+#videos h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #f1f1f1;
+}
+
+#videos iframe {
+    margin: 20px;
+    border-radius: 10px;
+}
+
+#videos #moodSelection {
+    margin-bottom: 30px;
+}
+
+#videos #moodSelection h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+#videos #moodSelection label {
+    font-size: 1.2rem;
+    margin-right: 20px;
+}
+
+#videos #moodSelection button {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    background-color: #f32222;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#videos #moodSelection button:hover {
+    background-color: #797d7b;
+}
+
+#videos #videosContainer {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* Ensures 4 columns per row */
+    gap: 20px; /* Space between videos */
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#videos #videosContainer .video {
+    background-color: #222;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+#videos #videosContainer .video img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+#videos #videosContainer .video a {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #ecf0f1;
+    display: block;
+    margin-top: 10px;
+    text-decoration: none;
+}
+
+#videos #videosContainer .video a:hover {
+    color: #d44040;
+}
+
+#videos #videosContainer .video p {
+    color: #bdc3c7;
+    font-size: 1rem;
+    margin-top: 10px;
+}
+
+/* Adding an invisible filler for empty spots when there are fewer than 8 videos */
+#videos #videosContainer .video.empty {
+    visibility: hidden; /* Make empty elements invisible */
+}
+
+
+/* Media Query for Tablets and Smaller Screens (max-width: 768px) */
+@media (max-width: 768px) {
+    #videos h1 {
+        font-size: 2rem; /* Smaller heading */
+    }
+
+    #videos h2 {
+        font-size: 1.5rem; /* Slightly smaller subheading */
+    }
+
+    #moodSelection {
+        justify-content: flex-start; /* Align checkboxes to the left */
+    }
+    #moodSelection label {
+        font-size: 1rem;
+        margin-right: 20px;
+    }
+
+    #moodSelection button {
+        font-size: 1rem;
+        padding: 8px 16px;
+    }
+
+    #videosContainer {
+        flex-direction: column; /* Stack videos vertically */
+        gap: 15px;
+    }
+}
+/* Media Query for Mobile Devices (max-width: 480px) */
+@media (max-width: 480px) {
+    #videos {
+        padding: 20px;
+    }
+
+    #videos h1 {
+        font-size: 1.6rem; /* Even smaller heading */
+    }
+
+    #videos h2 {
+        font-size: 1.2rem; /* Smaller subheading */
+    }
+    #moodSelection {
+        flex-direction: column; /* Stack the checkbox labels vertically */
+        gap: 10px;
+        justify-content: center;
+    }
+
+    #moodSelection label {
+        font-size: 0.9rem;
+    }
+
+    #moodSelection button {
+        font-size: 1rem;
+        padding: 8px 16px;
+    }
+
+    #videosContainer {
+        flex-direction: column; /* Stack videos vertically */
+        gap: 15px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#doctors {
+    padding: 40px 20px;
+    background-color: #0c0c0c;
+    color: white;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 columns per row */
+    gap: 20px; /* Space between boxes */
+    text-align: center; /* Ensures text in the section is centered */
+}
+
+#doctors h1 {
+    font-size: 3rem;
+    margin-bottom: 40px;
+    color: #f1f1f1;
+    text-align: center; /* Center the heading */
+    grid-column: span 5; /* Makes the heading span all columns */
+}
+
+/* For the boxes */
+.doctor-box {
+    background-color: #040404;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.doctor-box:hover {
+    transform: scale(1.05);
+}
+
+.doctor-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.doctor-box h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #ecf0f1;
+}
+
+.doctor-box p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+    color: #bdc3c7;
+}
+
+.view-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    background-color: #e72121;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.view-button:hover {
+    background-color: #646665;
+}
+
+/* Ensures 5 boxes per row */
+#doctors {
+    grid-template-columns: repeat(5, 1fr); /* 5 boxes in one row */
+}
+
+/* Media Query for Tablets and Smaller Screens (max-width: 768px) */
+@media (max-width: 768px) {
+    #doctors {
+        padding: 30px 15px;
+        grid-template-columns: repeat(1, 1fr); /* 1 column per row on tablets */
+        gap: 20px; /* Space between boxes */
+    }
+
+    #doctors h1 {
+        font-size: 2rem; /* Slightly smaller heading */
+        margin-bottom: 30px;
+    }
+
+    .doctor-box {
+        padding: 20px;
+        margin: 10px 0; /* Vertical margin between boxes */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .doctor-box h2 {
+        font-size: 1.5rem; /* Heading size remains the same */
+        margin-bottom: 10px;
+    }
+
+    .doctor-box p {
+        font-size: 1rem; /* Text size remains the same */
+        margin-bottom: 15px;
+    }
+
+    .view-button {
+        padding: 10px 20px;
+        font-size: 1.2rem; /* Button size stays the same */
+    }
+}
+
+/* Media Query for Mobile Devices (max-width: 480px) */
+@media (max-width: 480px) {
+    #doctors {
+        padding: 20px 10px;
+        grid-template-columns: repeat(1, 1fr); /* 1 column per row on mobile */
+        gap: 15px; /* Reduced gap between boxes */
+    }
+
+    #doctors h1 {
+        font-size: 1.6rem; /* Further reduce heading size */
+        margin-bottom: 20px;
+    }
+
+    .doctor-box {
+        padding: 15px;
+        margin: 10px 0; /* Vertical margin between boxes */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .doctor-box h2 {
+        font-size: 1.4rem; /* Slightly smaller heading */
+        margin-bottom: 8px;
+    }
+
+    .doctor-box p {
+        font-size: 0.95rem; /* Smaller text for descriptions */
+        margin-bottom: 12px;
+    }
+
+    .view-button {
+        padding: 8px 16px;
+        font-size: 1rem; /* Reduce font size of button */
+    }
+}

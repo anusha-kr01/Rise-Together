@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOUL SPARKS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header Section -->
+<header>
+    <div class="logo">
+        <h1>SOUL SPARKS</h1>
+        <p style="text-align: center; font-size: 1.2rem; color: #555;">For the best viewing experience, please switch to a desktop view.</p>
+
+    </div>
+    <nav>
+        <ul>
+            <li><a href="#hero">HOME</a></li>
+            <li><a href="#help">SUPPORT CENTER</a></li>
+            <li><a href="#videos">VOICE OF HOPE</a></li>
+            <li><a href="#doctors">THERAPY GUIDE</a></li>
+        </ul>
+    </nav>
+</header>
+
+
+   
+
+
+
+
+
+   <!-- Home Section with Full-Screen Background -->
+<section id="hero" style="background: url('suicide.jpeg') no-repeat center center/cover;">
+    <h2>"Suicide is a permanent solution for a temporary problem."</h2>
+    <button id="reachOutBtn">Reach Out for Help</button>
+</section>
+
+<script>
+    // Adding functionality for the "Reach Out for Help" button
+    document.getElementById('reachOutBtn').addEventListener('click', () => {
+        window.open('https://www.suicidepreventionlifeline.org/', '_blank');
+    });
+</script>
+
+
+
+
+
+<!-- Help Section with Suicide Prevention Numbers -->
+<section id="help">
+    <h1>Suicide Prevention Helplines</h1>
+
+    <!-- Helpline Boxes -->
+    <div class="help-box">
+        <h2>Algeria</h2>
+        <p>Call 0021 3983 2000 58</p>
+    </div>
+    <div class="help-box">
+        <h2>Argentina</h2>
+        <p>Call 5263–0583</p>
+    </div>
+    <div class="help-box">
+        <h2>Australia</h2>
+        <p>Call 1300 78 99 78</p>
+    </div>
+    <div class="help-box">
+        <h2>Bangladesh</h2>
+        <p>Call +88 09612 119911</p>
+    </div>
+    <div class="help-box">
+        <h2>Belgium</h2>
+        <p>Call 080032123</p>
+    </div>
+    <div class="help-box">
+        <h2>Brazil</h2>
+        <p>Call 188</p>
+    </div>
+    <div class="help-box">
+        <h2>Canada</h2>
+        <p>Call 1–833–456–4566</p>
+    </div>
+    <div class="help-box">
+        <h2>China</h2>
+        <p>Call 010–8295–1332</p>
+    </div>
+    <div class="help-box">
+        <h2>Egypt</h2>
+        <p>Call 762 1602</p>
+    </div>
+    <div class="help-box">
+        <h2>France</h2>
+        <p>Call 01 45 39 40 00</p>
+    </div>
+    <div class="help-box">
+        <h2>India</h2>
+        <p>Call +91 8422984530</p>
+    </div>
+    <div class="help-box">
+        <h2>United States</h2>
+        <p>Call 988</p>
+    </div>
+
+    <!-- "Not from the mentioned countries?" section -->
+    <div class="search-help">
+        <p>Not from the mentioned countries?</p>
+        <button id="searchBtn">Find Your Country's Helpline</button>
+    </div>
+</section>
+
+
+
+
+
+<!-- YouTube Video Section -->
+<section id="videos">
+    <h1>What makes you feel better?</h1>
+
+    <!-- Mood Selection -->
+    <div id="moodSelection">
+        <h2>What do you prefer?</h2>
+        <label for="happyMood">
+            <input type="checkbox" id="happyMood" name="mood" value="happy">
+            Happy
+        </label>
+        <label for="silenceMood">
+            <input type="checkbox" id="silenceMood" name="mood" value="silence">
+            Silence
+        </label>
+        <label for="inspiredMood">
+            <input type="checkbox" id="inspiredMood" name="mood" value="inspired">
+            Inspired
+        </label>
+        <label for="devotionalMood">
+            <input type="checkbox" id="devotionalMood" name="mood" value="devotional">
+            Devotional
+        </label>
+        <label for="peacefulMood">
+            <input type="checkbox" id="peacefulMood" name="mood" value="peaceful">
+            Peaceful
+        </label>
+        <button id="fetchMoodVideos" onclick="getVideosByMood()">Fetch Videos</button>
+    </div>
+
+    <!-- Video Display -->
+    <div id="videosContainer"></div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+<!-- Doctor Section for Therapy Booking -->
+<section id="doctors">
+    <h1>Talk to a Therapist</h1>
+    <div class="doctor-box">
+        <img src="images/img2.jpg" alt="Online Therapy" class="doctor-image">
+        <h2>Online Therapy</h2>
+        <p>Get professional therapy online anytime, anywhere. Access therapy resources now.</p>
+        <a href="https://www.onlinetherapy.com/free/" target="_blank" class="view-button">View</a>
+    </div>
+
+    <div class="doctor-box">
+        <img src="images/img1.jpg" alt="By My Side Support" class="doctor-image">
+        <h2>By My Side Support</h2>
+        <p>Connect with therapists and support groups online. Reach out for free consultations.</p>
+        <a href="https://bymyside.support/" target="_blank" class="view-button">View</a>
+    </div>
+
+    <div class="doctor-box">
+        <img src="images/img4.jpg" alt="The Live Love Laugh Foundation" class="doctor-image">
+        <h2>The Live Love Laugh Foundation</h2>
+        <p>Find mental health helplines and support services available across India.</p>
+        <a href="https://www.thelivelovelaughfoundation.org/find-help/helplines" target="_blank" class="view-button">View</a>
+    </div>
+
+    <div class="doctor-box">
+        <img src="images/img3.jpg" alt="7 Cups Therapy" class="doctor-image">
+        <h2>7 Cups Therapy</h2>
+        <p>Connect with online therapists or join free support groups for emotional support.</p>
+        <a href="https://www.7cups.com/" target="_blank" class="view-button">View</a>
+    </div>
+
+    <div class="doctor-box">
+        <img src="images/img5.jpg.webp" alt="BuddyHelp" class="doctor-image">
+        <h2>BuddyHelp</h2>
+        <p>Find a mental health buddy and get emotional support through text, calls, and chats.</p>
+        <a href="https://buddyhelp.org/" target="_blank" class="view-button">View</a>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+    <footer>
+        <p>&copy; Anusha K R | 2024 | Soul Sparks</p>
+        <p>All Rights Reserved</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
