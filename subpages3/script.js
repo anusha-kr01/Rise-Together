@@ -14,8 +14,8 @@ document.getElementById('reachOutBtn').addEventListener('click', () => {
 // help section: 
 // Function to fetch helpline from Google Custom Search API based on the country entered
 async function fetchHelpline(country) {
-    const apiKey = 'AIzaSyBqd2TjONV-fSOqqCBmKUwWFBstw5W1J4Y';  // Replace with your Google API key
-    const cx = '7025364494c2e4285';  // Your Custom Search Engine ID
+    const apiKey = '';  // Replace with your Google API key
+    const cx = '';  // Your Custom Search Engine ID
 
     // Construct the search query to look for suicide prevention helplines for the entered country
     const query = `suicide prevention helpline ${country}`;
@@ -73,8 +73,7 @@ document.getElementById('searchBtn').addEventListener('click', () => {
 
 
 // Your YouTube API Key
-// Your YouTube API Key
-const apiKey = 'AIzaSyDQWFJ2oNmmO-9BXhv1wgEFCbJfXEq8ntQ';
+const apiKey = '';
 
 // Function to fetch motivational songs from YouTube based on a search query
 async function fetchMotivationalSongs(query) {
