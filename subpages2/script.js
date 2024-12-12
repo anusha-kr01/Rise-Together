@@ -213,8 +213,8 @@ fetchDonationCrisisData();
 // home part: 
 // Function to fetch image from Google Custom Search API based on a query (e.g., crisis title)
 async function fetchImage(query) {
-    const apiKey = 'AIzaSyBakNHgK2hC9rTK5dmDgWjgKRGbBOwkMj4';  // Replace with your Google API key
-    const cx = 'a6329fc247e6a4083';  // Your Custom Search Engine ID
+    const apiKey = '';  // Replace with your Google API key
+    const cx = '';  // Your Custom Search Engine ID
     const url = `https://www.googleapis.com/customsearch/v1?q=${query}&searchType=image&cx=${cx}&key=${apiKey}`;
 
     // Predefined local images as fallback
