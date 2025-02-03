@@ -4,7 +4,7 @@
 "Rise Together" is a web-based platform developed to empower individuals and communities by providing centralized access to resources during crises. It addresses challenges related to natural disasters, mental health, and refugee displacement by fostering collaboration, compassion, and support.
 
 **Tagline:** *"Together, we rise."*
-
+Access my website here: https://rise-togetherr.netlify.app/
 ---
 
 ## **Features**
